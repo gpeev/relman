@@ -1,0 +1,11 @@
+<project>
+
+    <property name="home" value="/Users/gpeev/Downloads/code/relman5/relman"/>
+
+    <target name="copyJs">
+        <copy todir="${home}/target/relman-web-0.1">
+            <fileset dir="${home}/src/main/webapp" excludes="**/*.jsp"/>
+        </copy>
+    </target>
+
+</project>

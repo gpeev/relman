@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui
+END
+SelectDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/filebot/!svn/ver/351/trunk/source/net/sourceforge/filebot/ui/SelectDialog.java
+END
+MainFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/filebot/!svn/ver/354/trunk/source/net/sourceforge/filebot/ui/MainFrame.java
+END
+PanelBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/filebot/!svn/ver/212/trunk/source/net/sourceforge/filebot/ui/PanelBuilder.java
+END
+HeaderPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/filebot/!svn/ver/212/trunk/source/net/sourceforge/filebot/ui/HeaderPanel.java
+END
+AbstractSearchPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/AbstractSearchPanel.java
+END
+FileBotTab.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/filebot/!svn/ver/175/trunk/source/net/sourceforge/filebot/ui/FileBotTab.java
+END
+SinglePanelFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/filebot/!svn/ver/214/trunk/source/net/sourceforge/filebot/ui/SinglePanelFrame.java
+END
+FileBotListExportHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/filebot/!svn/ver/255/trunk/source/net/sourceforge/filebot/ui/FileBotListExportHandler.java
+END
+FileBotList.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/filebot/!svn/ver/265/trunk/source/net/sourceforge/filebot/ui/FileBotList.java
+END
+HistoryPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/filebot/!svn/ver/179/trunk/source/net/sourceforge/filebot/ui/HistoryPanel.java
+END
+Language.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/filebot/!svn/ver/481/trunk/source/net/sourceforge/filebot/ui/Language.java
+END
+SelectButtonTextField.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/filebot/!svn/ver/253/trunk/source/net/sourceforge/filebot/ui/SelectButtonTextField.java
+END
+NotificationLogging.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/NotificationLogging.java
+END
+FileBotTabComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/filebot/!svn/ver/179/trunk/source/net/sourceforge/filebot/ui/FileBotTabComponent.java
+END
+Language.properties
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/filebot/!svn/ver/481/trunk/source/net/sourceforge/filebot/ui/Language.properties
+END

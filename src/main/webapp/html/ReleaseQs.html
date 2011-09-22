@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>ReleaseQs</title>
+
+    <!-- Le styles -->
+    <link href="ReleaseQs_files/bootstrap-1.css" rel="stylesheet" type="text/css">
+    <link href="ReleaseQs_files/docs.css" rel="stylesheet" type="text/css">
+
+    <!-- Le javascript -->
+    <script src="ReleaseQs_files/jquery-1.js"></script>
+    <script src="ReleaseQs_files/jquery.js"></script>
+    <script src="ReleaseQs_files/application.js"></script>
+    <script language="javascript" type="text/javascript" src="ReleaseQs_files/fixOnMouseOut.js"></script>
+
+
+    <script type="application/javascript">
+        function displayPopup(id)
+        {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function hidePopup(id)
+        {
+            document.getElementById(id).style.display = 'none';
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+
+<div class="topbar">
+    <div class="container fixed">
+        <h3><a class="logo" href="ReleaseQs.html#">
+            <span>Release Qs</span>
+        </a></h3>
+        <ul style="float:right;">
+            <li><a href="ReleaseQs.html#" onclick="displayPopup('login');">Login</a></li>
+            <li width="23" height="40" style="padding-top:10px;"> |</li>
+            <li><a href="ReleaseQs.html#" onclick="displayPopup('registration');">Register</a></li>
+        </ul>
+    </div>
+</div>
+
+<div style="background-color: rgba(0,0,0,0.5); border: none; padding: 40px; display:none; float:left; z-index: 7000; position:fixed; height:100%; width: 100%;"
+     id="registration">
+    <div class="modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 6000;">
+        <div class="modal-header">
+            <h3>Registration</h3>
+            <a href="ReleaseQs.html#" class="close" onclick="hidePopup('registration');">×</a>
+        </div>
+        <div class="modal-body">
+            <p><strong>Why Register? </strong>Keep a personal queue to remind you of your release dates by Registering!
+            </p>
+
+            <form>
+                <fieldset>
+                    <div class="clearfix">
+                        <label for="">Email: </label>
+
+                        <div class="input">
+                            <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text">
+                        </div>
+                    </div>
+                    <!-- /clearfix -->
+
+                    <div class="clearfix">
+                        <label for="">Password: </label>
+
+                        <div class="input">
+                            <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text">
+                        </div>
+                    </div>
+                    <!-- /clearfix -->
+
+                    <div class="clearfix">
+                        <label for="">Confirm Password: </label>
+
+                        <div class="input">
+                            <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text">
+                        </div>
+                    </div>
+                    <!-- /clearfix -->
+                </fieldset>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="ReleaseQs.html#" class="btn primary">Register</a>
+            <a href="ReleaseQs.html#" class="btn secondary" onclick="hidePopup('registration');">Cancel</a>
+        </div>
+    </div>
+</div>
+
+<div style="background-color: rgba(0,0,0,0.5); border: none; padding: 40px; display:none; float:left; z-index: 7000; position:fixed; height:100%; width: 100%;"
+     id="login">
+    <div class="modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 6000;">
+        <div class="modal-header">
+            <h3>Login</h3>
+            <a href="ReleaseQs.html#" class="close" onclick="hidePopup('login');">×</a>
+        </div>
+        <div class="modal-body">
+            <form>
+                <fieldset>
+                    <div class="clearfix">
+                        <label for="">Email: </label>
+
+                        <div class="input">
+                            <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text">
+                        </div>
+                    </div>
+                    <!-- /clearfix -->
+
+                    <div class="clearfix">
+                        <label for="">Password: </label>
+
+                        <div class="input">
+                            <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text">
+                        </div>
+                    </div>
+                    <!-- /clearfix -->
+
+                </fieldset>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <a href="ReleaseQs.html#" class="btn primary">Login</a>
+            <a href="ReleaseQs.html#" class="btn secondary" onclick="hidePopup('login');">Cancel</a>
+        </div>
+    </div>
+</div>
+
+<div id="masthead">
+    <div class="inner">
+        <div class="container">
+
+
+            <div class="topbar-wrapper" style="z-index: 5;">
+                <div class="topbar">
+                    <div class="container fixed">
+                        <ul>
+                            <li class="active"><a href="">Home</a></li>
+                            <li><a href="">TV</a></li>
+                            <li><a href="">Movies</a></li>
+                            <li><a href="">Music</a></li>
+                            <li><a href="">Games</a></li>
+                            <li><a href="">Books</a></li>
+                            <li><a href="">Gadgets</a></li>
+                        </ul>
+                        <form action="" style="float:right;">
+                            <input placeholder="Search" type="text">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- topbar-wrapper -->
+        </div>
+        <!-- /container -->
+    </div>
+</div>
+
+<div class="container">
+
+    <section id="grid-system">
+        <div class="page-header">
+            <h1>Most Popular</h1>
+
+            <div style="float:right; top:-25px; position:relative;">
+                <a href="ReleaseQs.html#">List</a> |
+                <a href="ReleaseQs.html#">Images</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span3 columns item itempop-well">
+                <img src="ReleaseQs_files/avengers.jpg" onmouseover="displayPopup('it1popover1');"
+                     onmouseout="hidePopup('it1popover1');" height="240" width="160">
+
+                <div width="160" align="center"><h5>9/30/2011</h5></div>
+                <div class="itempop-wrapper">
+                    <div style="display: none;" class="itempop right" id="it1popover1">
+                        <div class="arrow"></div>
+                        <div class="inner">
+                            <h3 class="title">Avengers</h3>
+
+                            <div class="content">
+                                <p>Something blah blah blah hahahalskjflka kldj alksdj
+                                    flkajsd flkja lksfj lkaj sldfjalkwejfliajsdvlalwrijvlsm l laewjfiamilvj
+                                    li ijwel ijwlij laisj liawj liwj leij lija vlij ewlifj aweijlaj dliva
+                                    wjlij laiwj lija lij lij wlijw elcij ldij liaj lij aliwj liwj lvijaliwje
+                                    lavijalw ijli jlai wjli jlw</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 columns item itempop-well">
+                <img src="ReleaseQs_files/avengers.jpg" onmouseover="displayPopup('it1popover2');"
+                     onmouseout="hidePopup('it1popover2');" height="240" width="160">
+
+                <div width="160" align="center"><h5>9/30/2011</h5></div>
+                <div class="itempop-wrapper">
+                    <div style="display: none;" class="itempop right" id="it1popover2">
+                        <div class="arrow"></div>
+                        <div class="inner">
+                            <h3 class="title">Avengers</h3>
+
+                            <div class="content">
+                                <p>Something blah blah blah hahahalskjflka kldj alksdj
+                                    flkajsd flkja lksfj lkaj sldfjalkwejfliajsdvlalwrijvlsm l laewjfiamilvj
+                                    li ijwel ijwlij laisj liawj liwj leij lija vlij ewlifj aweijlaj dliva
+                                    wjlij laiwj lija lij lij wlijw elcij ldij liaj lij aliwj liwj lvijaliwje
+                                    lavijalw ijli jlai wjli jlw</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 columns item itempop-well">
+                <img src="ReleaseQs_files/avengers.jpg" onmouseover="displayPopup('it1popover3');"
+                     onmouseout="hidePopup('it1popover3');" height="240" width="160">
+
+                <div width="160" align="center"><h5>9/30/2011</h5></div>
+                <div class="itempop-wrapper">
+                    <div style="display: none;" class="itempop right" id="it1popover3">
+                        <div class="arrow"></div>
+                        <div class="inner">
+                            <h3 class="title">Avengers</h3>
+
+                            <div class="content">
+                                <p>Something blah blah blah.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 columns item itempop-well">
+                <img src="ReleaseQs_files/spiderman.png" onmouseover="displayPopup('it1popover4');"
+                     onmouseout="hidePopup('it1popover4');" height="240" width="160">
+
+                <div width="160" align="center"><h5>7/4/2012</h5></div>
+                <div class="itempop-wrapper-left">
+                    <div style="display: none;" class="itempop left" id="it1popover4">
+                        <div class="arrow"></div>
+                        <div class="inner">
+                            <h3 class="title">Amazing-Spiderman</h3>
+
+                            <div class="content">
+                                <p>Spiderman spiderman, does whatever a spider can.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 columns item itempop-well">
+                <img src="ReleaseQs_files/underworld.jpg" onmouseover="displayPopup('it1popover5');"
+                     onmouseout="hidePopup('it1popover5');" height="240" width="160">
+
+                <div width="160" align="center"><h5>9/30/2011</h5></div>
+                <div class="itempop-wrapper-left">
+                    <div style="display: none;" class="itempop left" id="it1popover5">
+                        <div class="arrow"></div>
+                        <div class="inner">
+                            <h3 class="title">Underworld 4</h3>
+
+                            <div class="content">
+                                <p>Kate Beckinsale is hot!!!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="span3 columns item itempop-well">
+                <img src="ReleaseQs_files/avengers.jpg" onmouseover="displayPopup('it2popover1');"
+                     onmouseout="hidePopup('it2popover1');" height="240" width="160">
+
+                <div width="160" align="center"><h5>9/30/2011</h5></div>
+                <div class="itempop-wrapper">
+                    <div class="itempop right" id="it2popover1">
+                        <div class="arrow"></div>
+                        <div class="inner">
+                            <h3 class="title">Avengers</h3>
+
+                            <div class="content">
+                                <p>Something blah blah blah hahahalskjflka kldj alksdj
+                                    flkajsd flkja lksfj lkaj sldfjalkwejfliajsdvlalwrijvlsm l laewjfiamilvj
+                                    li ijwel ijwlij laisj liawj liwj leij lija vlij ewlifj aweijlaj dliva
+                                    wjlij laiwj lija lij lij wlijw elcij ldij liaj lij aliwj liwj lvijaliwje
+                                    lavijalw ijli jlai wjli jlw</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 columns item itempop-well">
+                <img src="ReleaseQs_files/avengers.jpg" onmouseover="displayPopup('it2popover2');"
+                     onmouseout="hidePopup('it2popover2');" height="240" width="160">
+
+                <div width="160" align="center"><h5>9/30/2011</h5></div>
+                <div class="itempop-wrapper">
+                    <div class="itempop right" id="it2popover2">
+                        <div class="arrow"></div>
+                        <div class="inner">
+                            <h3 class="title">Avengers</h3>
+
+                            <div class="content">
+                                <p>Something blah blah blah hahahalskjflka kldj alksdj
+                                    flkajsd flkja lksfj lkaj sldfjalkwejfliajsdvlalwrijvlsm l laewjfiamilvj
+                                    li ijwel ijwlij laisj liawj liwj leij lija vlij ewlifj aweijlaj dliva
+                                    wjlij laiwj lija lij lij wlijw elcij ldij liaj lij aliwj liwj lvijaliwje
+                                    lavijalw ijli jlai wjli jlw</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 columns item itempop-well">
+                <img src="ReleaseQs_files/avengers.jpg" onmouseover="displayPopup('it2popover3');"
+                     onmouseout="hidePopup('it2popover3');" height="240" width="160">
+
+                <div width="160" align="center"><h5>9/30/2011</h5></div>
+                <div class="itempop-wrapper">
+                    <div style="display: none;" class="itempop right" id="it2popover3">
+                        <div class="arrow"></div>
+                        <div class="inner">
+                            <h3 class="title">Avengers</h3>
+
+                            <div class="content">
+                                <p>Something blah blah blah.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 columns item itempop-well">
+                <img src="ReleaseQs_files/spiderman.png" onmouseover="displayPopup('it2popover4');"
+                     onmouseout="hidePopup('it2popover4');" height="240" width="160">
+
+                <div width="160" align="center"><h5>7/4/2012</h5></div>
+                <div class="itempop-wrapper-left">
+                    <div style="display: none;" class="itempop left" id="it2popover4">
+                        <div class="arrow"></div>
+                        <div class="inner">
+                            <h3 class="title">Amazing-Spiderman</h3>
+
+                            <div class="content">
+                                <p>Spiderman spiderman, does whatever a spider can.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 columns item itempop-well" onmouseout="fixOnMouseOut(this, event, hidePopup('it2info5'));"
+                 onmouseover="displayPopup('it2info5');">
+                <img src="ReleaseQs_files/underworld.jpg" id="it2pic5" style="display: block; z-index: 5;" height="240"
+                     width="160">
+
+                <div width="160" align="center"><h5>9/30/2011</h5></div>
+                <div id="it2info5"
+                     style="height: 240px; width: 160px; position: relative; top: -280px; display: none; z-index: 20; background-color: rgba(0, 0, 0, 0.5);">
+                    <div style="width:160px; height:240px;"><h4 style="text-align:center; color:#FFF">The Avengers
+                        Underworld</h4> <br>
+                        <button type="submit" class="btn primary">Save Changes</button>
+                        <button type="reset" class="btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</div>
+<!-- /container -->
+
+<div id="footer">
+    <div class="inner" style="padding:35px;">
+        <div class="container">
+            <div class="row">
+                <div class="span5 columns">
+                    <p>
+                        About Us
+                    </p>
+                </div>
+
+                <div class="span5 columns">
+                    <p>
+                        Jobs<br>
+                        <a href="http://suggestia.zymichost.com/RelMan/addRelease.html">Add Release</a><br>
+                    </p>
+                </div>
+                <div class="span5 columns">
+                    <p>
+                        Questions
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

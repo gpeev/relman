@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/filebot/!svn/ver/425/trunk/source/net/sourceforge/filebot/ui/panel/episodelist
+END
+EpisodeListPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/filebot/!svn/ver/425/trunk/source/net/sourceforge/filebot/ui/panel/episodelist/EpisodeListPanel.java
+END
+SeasonSpinnerModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/filebot/!svn/ver/267/trunk/source/net/sourceforge/filebot/ui/panel/episodelist/SeasonSpinnerModel.java
+END
+EpisodeListPanelBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/filebot/!svn/ver/212/trunk/source/net/sourceforge/filebot/ui/panel/episodelist/EpisodeListPanelBuilder.java
+END
+SeasonSpinnerEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/filebot/!svn/ver/259/trunk/source/net/sourceforge/filebot/ui/panel/episodelist/SeasonSpinnerEditor.java
+END

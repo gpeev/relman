@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/hash
+END
+Hash.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/filebot/!svn/ver/240/trunk/source/net/sourceforge/filebot/hash/Hash.java
+END
+HashType.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/hash/HashType.java
+END
+VerificationFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/hash/VerificationFileReader.java
+END
+ChecksumHash.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/filebot/!svn/ver/240/trunk/source/net/sourceforge/filebot/hash/ChecksumHash.java
+END
+SfvFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/hash/SfvFormat.java
+END
+MessageDigestHash.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/filebot/!svn/ver/240/trunk/source/net/sourceforge/filebot/hash/MessageDigestHash.java
+END
+VerificationFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/hash/VerificationFormat.java
+END
+VerificationUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/hash/VerificationUtilities.java
+END

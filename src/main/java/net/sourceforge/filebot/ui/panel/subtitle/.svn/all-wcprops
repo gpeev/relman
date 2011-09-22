@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/subtitle
+END
+LanguageComboBoxCellRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/LanguageComboBoxCellRenderer.java
+END
+MemoryFileListExportHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/filebot/!svn/ver/305/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/MemoryFileListExportHandler.java
+END
+ZipArchive.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/filebot/!svn/ver/295/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/ZipArchive.java
+END
+SubtitleDownloadComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/SubtitleDownloadComponent.java
+END
+SubtitlePackage.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/SubtitlePackage.java
+END
+MemoryFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/filebot/!svn/ver/295/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/MemoryFile.java
+END
+DashedSeparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/filebot/!svn/ver/273/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/DashedSeparator.java
+END
+SubtitlePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/filebot/!svn/ver/481/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/SubtitlePanel.java
+END
+SubtitleViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/filebot/!svn/ver/369/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/SubtitleViewer.java
+END
+PopupSelectionListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/filebot/!svn/ver/273/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/PopupSelectionListener.java
+END
+SubtitlePanelBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/filebot/!svn/ver/212/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/SubtitlePanelBuilder.java
+END
+SimpleComboBox.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/filebot/!svn/ver/386/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/SimpleComboBox.java
+END
+ArchiveType.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/filebot/!svn/ver/295/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/ArchiveType.java
+END
+RarArchive.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/filebot/!svn/ver/368/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/RarArchive.java
+END
+SubtitleUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/filebot/!svn/ver/385/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/SubtitleUtilities.java
+END
+SubtitleDropTarget.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/SubtitleDropTarget.java
+END
+LanguageComboBoxModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/filebot/!svn/ver/481/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/LanguageComboBoxModel.java
+END
+SubtitlePackageCellRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/SubtitlePackageCellRenderer.java
+END
+VideoHashSubtitleDownloadDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/subtitle/VideoHashSubtitleDownloadDialog.java
+END

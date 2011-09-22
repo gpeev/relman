@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/filebot/!svn/ver/370/trunk/source/net/sourceforge/filebot/subtitle
+END
+SubtitleTimeFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/filebot/!svn/ver/320/trunk/source/net/sourceforge/filebot/subtitle/SubtitleTimeFormat.java
+END
+SubStationAlphaReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/368/trunk/source/net/sourceforge/filebot/subtitle/SubStationAlphaReader.java
+END
+SubtitleFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/subtitle/SubtitleFormat.java
+END
+SubtitleElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/filebot/!svn/ver/297/trunk/source/net/sourceforge/filebot/subtitle/SubtitleElement.java
+END
+SubRipReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/filebot/!svn/ver/370/trunk/source/net/sourceforge/filebot/subtitle/SubRipReader.java
+END
+MicroDVDReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/subtitle/MicroDVDReader.java
+END
+SubViewerReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/subtitle/SubViewerReader.java
+END
+SubtitleReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/358/trunk/source/net/sourceforge/filebot/subtitle/SubtitleReader.java
+END

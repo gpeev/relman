@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/rename
+END
+RenameList.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/filebot/!svn/ver/265/trunk/source/net/sourceforge/filebot/ui/panel/rename/RenameList.java
+END
+EpisodeBindingDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/rename/EpisodeBindingDialog.java
+END
+FileNameFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/filebot/!svn/ver/335/trunk/source/net/sourceforge/filebot/ui/panel/rename/FileNameFormatter.java
+END
+HistorySpooler.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/346/trunk/source/net/sourceforge/filebot/ui/panel/rename/HistorySpooler.java
+END
+MoviePart.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/filebot/!svn/ver/413/trunk/source/net/sourceforge/filebot/ui/panel/rename/MoviePart.java
+END
+MatchSimilarityMetric.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/filebot/!svn/ver/456/trunk/source/net/sourceforge/filebot/ui/panel/rename/MatchSimilarityMetric.java
+END
+CharacterHighlightPainter.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/filebot/!svn/ver/214/trunk/source/net/sourceforge/filebot/ui/panel/rename/CharacterHighlightPainter.java
+END
+ExpressionFormatDocument.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/filebot/!svn/ver/395/trunk/source/net/sourceforge/filebot/ui/panel/rename/ExpressionFormatDocument.java
+END
+NamesListTransferablePolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/filebot/!svn/ver/432/trunk/source/net/sourceforge/filebot/ui/panel/rename/NamesListTransferablePolicy.java
+END
+ValidateDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/395/trunk/source/net/sourceforge/filebot/ui/panel/rename/ValidateDialog.java
+END
+MatchModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/filebot/!svn/ver/260/trunk/source/net/sourceforge/filebot/ui/panel/rename/MatchModel.java
+END
+EpisodeBindingDialog.properties
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/filebot/!svn/ver/456/trunk/source/net/sourceforge/filebot/ui/panel/rename/EpisodeBindingDialog.properties
+END
+ScrollPaneSynchronizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/filebot/!svn/ver/342/trunk/source/net/sourceforge/filebot/ui/panel/rename/ScrollPaneSynchronizer.java
+END
+MatchFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/330/trunk/source/net/sourceforge/filebot/ui/panel/rename/MatchFormatter.java
+END
+EpisodeFormatDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/rename/EpisodeFormatDialog.java
+END
+MovieHashMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/filebot/!svn/ver/483/trunk/source/net/sourceforge/filebot/ui/panel/rename/MovieHashMatcher.java
+END
+RenameModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/filebot/!svn/ver/421/trunk/source/net/sourceforge/filebot/ui/panel/rename/RenameModel.java
+END
+EpisodeListMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/ui/panel/rename/EpisodeListMatcher.java
+END
+HighlightListCellRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/filebot/!svn/ver/395/trunk/source/net/sourceforge/filebot/ui/panel/rename/HighlightListCellRenderer.java
+END
+EpisodeFormatDialog.properties
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/filebot/!svn/ver/347/trunk/source/net/sourceforge/filebot/ui/panel/rename/EpisodeFormatDialog.properties
+END
+RenamePanelBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/filebot/!svn/ver/212/trunk/source/net/sourceforge/filebot/ui/panel/rename/RenamePanelBuilder.java
+END
+History.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/332/trunk/source/net/sourceforge/filebot/ui/panel/rename/History.java
+END
+MovieFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/421/trunk/source/net/sourceforge/filebot/ui/panel/rename/MovieFormatter.java
+END
+AbstractFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/filebot/!svn/ver/246/trunk/source/net/sourceforge/filebot/ui/panel/rename/AbstractFile.java
+END
+RenameAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/rename/RenameAction.java
+END
+AutoCompleteMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/ui/panel/rename/AutoCompleteMatcher.java
+END
+FilesListTransferablePolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/filebot/!svn/ver/432/trunk/source/net/sourceforge/filebot/ui/panel/rename/FilesListTransferablePolicy.java
+END
+HistoryDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/filebot/!svn/ver/395/trunk/source/net/sourceforge/filebot/ui/panel/rename/HistoryDialog.java
+END
+RenamePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/rename/RenamePanel.java
+END
+RenameListCellRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/filebot/!svn/ver/330/trunk/source/net/sourceforge/filebot/ui/panel/rename/RenameListCellRenderer.java
+END
+MatchAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/filebot/!svn/ver/482/trunk/source/net/sourceforge/filebot/ui/panel/rename/MatchAction.java
+END
+EpisodeExpressionFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/filebot/!svn/ver/434/trunk/source/net/sourceforge/filebot/ui/panel/rename/EpisodeExpressionFormatter.java
+END

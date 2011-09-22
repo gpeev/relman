@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/analyze
+END
+FileTree.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/analyze/FileTree.java
+END
+FileTreeExportHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/filebot/!svn/ver/166/trunk/source/net/sourceforge/filebot/ui/panel/analyze/FileTreeExportHandler.java
+END
+FileTreePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/292/trunk/source/net/sourceforge/filebot/ui/panel/analyze/FileTreePanel.java
+END
+TypeTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/filebot/!svn/ver/193/trunk/source/net/sourceforge/filebot/ui/panel/analyze/TypeTool.java
+END
+AnalyzePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/filebot/!svn/ver/214/trunk/source/net/sourceforge/filebot/ui/panel/analyze/AnalyzePanel.java
+END
+FileTreeCellRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/filebot/!svn/ver/166/trunk/source/net/sourceforge/filebot/ui/panel/analyze/FileTreeCellRenderer.java
+END
+FileTreeTransferablePolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/filebot/!svn/ver/487/trunk/source/net/sourceforge/filebot/ui/panel/analyze/FileTreeTransferablePolicy.java
+END
+SplitTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/filebot/!svn/ver/214/trunk/source/net/sourceforge/filebot/ui/panel/analyze/SplitTool.java
+END
+AnalyzePanelBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/filebot/!svn/ver/212/trunk/source/net/sourceforge/filebot/ui/panel/analyze/AnalyzePanelBuilder.java
+END
+Tool.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/filebot/!svn/ver/214/trunk/source/net/sourceforge/filebot/ui/panel/analyze/Tool.java
+END

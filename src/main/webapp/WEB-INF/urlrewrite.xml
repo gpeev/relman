@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.1//EN" "http://www.tuckey.org/res/dtds/urlrewrite3.1.dtd">
+<urlrewrite>
+    <rule>
+        <from>^/appstats(.*)$</from>
+        <to last="true">/appstats$1</to>
+    </rule>
+    <rule>
+        <from>^/remote_api$</from>
+        <to last="true">/remote_api</to>
+    </rule>
+    <rule>
+        <from>^/_ah/(.*)$</from>
+        <to last="true">/_ah/$1</to>
+    </rule>
+    <rule>
+        <from>^/(.*)$</from>
+        <to last="true">/app/$1</to>
+    </rule>
+</urlrewrite>

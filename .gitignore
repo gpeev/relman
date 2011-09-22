@@ -1,0 +1,15 @@
+/target
+/checkstyle.xml
+/.settings
+/.classpath
+/.fbprefs
+/.pmd
+/.project
+/.springBeans
+/release.properties
+/.checkstyle
+/pom.xml.releaseBackup
+/fbfilter.xml
+*.iml
+*.ipr
+*.iws

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/filebot/!svn/ver/482/trunk/source/net/sourceforge/filebot/similarity
+END
+SeriesNameMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/filebot/!svn/ver/446/trunk/source/net/sourceforge/filebot/similarity/SeriesNameMatcher.java
+END
+DateMetric.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/filebot/!svn/ver/437/trunk/source/net/sourceforge/filebot/similarity/DateMetric.java
+END
+Matcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/filebot/!svn/ver/482/trunk/source/net/sourceforge/filebot/similarity/Matcher.java
+END
+SeasonEpisodeMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/filebot/!svn/ver/461/trunk/source/net/sourceforge/filebot/similarity/SeasonEpisodeMatcher.java
+END
+SeasonEpisodeMetric.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/456/trunk/source/net/sourceforge/filebot/similarity/SeasonEpisodeMetric.java
+END
+SimilarityMetric.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/filebot/!svn/ver/345/trunk/source/net/sourceforge/filebot/similarity/SimilarityMetric.java
+END
+NameSimilarityMetric.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/filebot/!svn/ver/345/trunk/source/net/sourceforge/filebot/similarity/NameSimilarityMetric.java
+END
+Match.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/filebot/!svn/ver/339/trunk/source/net/sourceforge/filebot/similarity/Match.java
+END
+NumericSimilarityMetric.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/filebot/!svn/ver/345/trunk/source/net/sourceforge/filebot/similarity/NumericSimilarityMetric.java
+END
+FileSizeMetric.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/filebot/!svn/ver/437/trunk/source/net/sourceforge/filebot/similarity/FileSizeMetric.java
+END

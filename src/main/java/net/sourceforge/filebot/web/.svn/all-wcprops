@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/filebot/!svn/ver/488/trunk/source/net/sourceforge/filebot/web
+END
+OpenSubtitlesClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/483/trunk/source/net/sourceforge/filebot/web/OpenSubtitlesClient.java
+END
+EpisodeListProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/web/EpisodeListProvider.java
+END
+SeasonOutOfBoundsException.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/219/trunk/source/net/sourceforge/filebot/web/SeasonOutOfBoundsException.java
+END
+TheTVDBClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/web/TheTVDBClient.java
+END
+EpisodeFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/filebot/!svn/ver/456/trunk/source/net/sourceforge/filebot/web/EpisodeFormat.java
+END
+SublightVideoHasher.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/281/trunk/source/net/sourceforge/filebot/web/SublightVideoHasher.java
+END
+SearchResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/filebot/!svn/ver/394/trunk/source/net/sourceforge/filebot/web/SearchResult.java
+END
+HyperLink.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/filebot/!svn/ver/329/trunk/source/net/sourceforge/filebot/web/HyperLink.java
+END
+SubtitleProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/filebot/!svn/ver/386/trunk/source/net/sourceforge/filebot/web/SubtitleProvider.java
+END
+VideoHashSubtitleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/filebot/!svn/ver/386/trunk/source/net/sourceforge/filebot/web/VideoHashSubtitleService.java
+END
+MovieIdentificationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/483/trunk/source/net/sourceforge/filebot/web/MovieIdentificationService.java
+END
+IMDbClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/web/IMDbClient.java
+END
+OpenSubtitlesSubtitleDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/filebot/!svn/ver/327/trunk/source/net/sourceforge/filebot/web/OpenSubtitlesSubtitleDescriptor.java
+END
+AnidbClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/web/AnidbClient.java
+END
+Date.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/web/Date.java
+END
+SerienjunkiesClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/web/SerienjunkiesClient.java
+END
+MovieDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/filebot/!svn/ver/329/trunk/source/net/sourceforge/filebot/web/MovieDescriptor.java
+END
+EpisodeListUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/filebot/!svn/ver/459/trunk/source/net/sourceforge/filebot/web/EpisodeListUtilities.java
+END
+SubsceneSubtitleClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/filebot/!svn/ver/431/trunk/source/net/sourceforge/filebot/web/SubsceneSubtitleClient.java
+END
+SubsceneSubtitleDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/431/trunk/source/net/sourceforge/filebot/web/SubsceneSubtitleDescriptor.java
+END
+AbstractEpisodeListProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/web/AbstractEpisodeListProvider.java
+END
+TMDbClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/filebot/!svn/ver/483/trunk/source/net/sourceforge/filebot/web/TMDbClient.java
+END
+OpenSubtitlesXmlRpc.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/483/trunk/source/net/sourceforge/filebot/web/OpenSubtitlesXmlRpc.java
+END
+WebRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/filebot/!svn/ver/479/trunk/source/net/sourceforge/filebot/web/WebRequest.java
+END
+TVRageClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/filebot/!svn/ver/480/trunk/source/net/sourceforge/filebot/web/TVRageClient.java
+END
+Episode.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/filebot/!svn/ver/456/trunk/source/net/sourceforge/filebot/web/Episode.java
+END
+SubtitleDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/filebot/!svn/ver/295/trunk/source/net/sourceforge/filebot/web/SubtitleDescriptor.java
+END
+OpenSubtitlesHasher.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/filebot/!svn/ver/385/trunk/source/net/sourceforge/filebot/web/OpenSubtitlesHasher.java
+END
+SublightSubtitleClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/filebot/!svn/ver/465/trunk/source/net/sourceforge/filebot/web/SublightSubtitleClient.java
+END
+SublightSubtitleDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/filebot/!svn/ver/295/trunk/source/net/sourceforge/filebot/web/SublightSubtitleDescriptor.java
+END
