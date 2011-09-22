@@ -1,0 +1,11 @@
+mvn clean package -P local   to create a new local build
+mvn gae:run -P local         to run locally
+mvn gae:run -P local-jrebel  to run locally with JRebel support
+mvn gae:stop -P local        to stop the local jetty server
+
+
+mvn clean package -P dev     to create a new dev build
+mvn gae:deploy -P dev        to deploy to your dev app engine app
+
+mvn clean package -P prod    to create a new prod build
+mvn gae:deploy -P prod       to deploy to your prod app engine app
