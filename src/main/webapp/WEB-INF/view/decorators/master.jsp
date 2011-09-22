@@ -39,7 +39,9 @@
             <%@ include file="/WEB-INF/view/includes/script.jsp" %>
         </div>
         <div id="content">
-            <decorator:body />
+        	<div class="container">
+            	<decorator:body />
+            </div>
         </div>
         <div id="footer">
             <%@ include file="/WEB-INF/view/includes/footer.jsp" %>

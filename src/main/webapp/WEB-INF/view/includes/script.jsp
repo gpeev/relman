@@ -7,3 +7,4 @@
 <!-- Le javascript -->
 <script src="/js/application.js"></script>
 <script language="javascript" type="text/javascript" src="/js/fixOnMouseOut.js"></script>
+<script language="javascript" type="text/javascript" src="/js/jquery-ui.js"></script>

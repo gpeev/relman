@@ -17,12 +17,25 @@
 	    	    <p id="userWarning" class="error" style="display:none"><spring:message code="login.nouser" /></p>
 		
     		    <form action="/login/submit" method="post">
-		    	      <table>
-    		    	      <tr><td><spring:message code="login.label.username" /></td><td><input type="text" name="username" value="<c:if test="${not empty error}"><c:out value="${SPRING_SECURITY_LAST_USERNAME}" escapeXml="false" /></c:if>"/></td></tr>
-    			          <tr><td><spring:message code="login.label.password" /></td><td><input type="password" name="password" /></td></tr>
-        			      <tr><td><spring:message code="login.label.remember" /></td><td><input type="checkbox" name="remember_me" /></td></tr>
-        			      <tr><td><input name="reset" type="reset" value="<spring:message code="global.reset" />" /></td><td><input name="submit" type="submit" value="<spring:message code="global.submit" />" /></td></tr>
-      			    </table>
+    		    <fieldset>      
+                <div class="clearfix">
+                	<spring:message code="login.label.username" />
+                    <input type="text" name="username" class="xlarge" value="<c:if test="${not empty error}"><c:out value="${SPRING_SECURITY_LAST_USERNAME}" escapeXml="false" /></c:if>"/>
+                </div>
+                <div class="clearfix">
+                    <spring:message code="login.label.password" />
+                    <input type="password" name="password" class="xlarge"/>
+                </div>
+                <div class="clearfix">
+                	<spring:message code="login.label.remember" />
+                    <input type="checkbox" name="remember_me" />
+                </div>
+                
+                <div class="clearfix modal-footer">
+                    <a href="#" class="btn secondary" onclick="hidePopup('login');">Cancel</a>
+                    <input name="submit" type="submit" class="btn primary" value="<spring:message code="global.submit" />" />
+                </div>
+            </fieldset>
 		        </form>
 		
 		        <p><spring:message code="login.create" htmlEscape="false" /></p>

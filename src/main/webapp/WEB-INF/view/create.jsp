@@ -6,34 +6,45 @@
         <title><spring:message code="create.title" /></title>
     </head>
     <body>
+    	<div class="row">
 		    <form:form modelAttribute="register" action="/register/create" method="post">
             <fieldset>      
-                <legend><spring:message code="create.legend" /></legend>
-                <p>
+                <h1><spring:message code="create.legend" /></h1>
+                <div class="clearfix">
                     <form:label for="displayName" path="displayName" cssErrorClass="error"><spring:message code="create.label.displayName" /></form:label>
-                    <form:input path="displayName" />
-                    <form:errors path="displayName" cssClass="error" />         
-                </p>
-                <p> 
+                    <div class="input">
+                    <form:input path="displayName" cssClass="xlarge" />
+                    <form:errors path="displayName" cssClass="error" />     
+                    </div>    
+                </div>
+                <div class="clearfix">
                     <form:label for="username" path="username" cssErrorClass="error"><spring:message code="create.label.username" /></form:label>
-                    <form:input path="username" />
+                    <div class="input">
+                    <form:input path="username" cssClass="xlarge" />
                     <form:errors path="username" cssClass="error" />
-                </p>
-                <p>
+                    </div>
+                </div>
+                <div class="clearfix">
                     <form:label for="email" path="email" cssErrorClass="error"><spring:message code="create.label.email" /></form:label>
-                    <form:input path="email" />
+                    <div class="input">
+                    <form:input path="email" cssClass="xlarge"/>
                     <form:errors path="email" cssClass="error" />
-                </p>
-                <p> 
+                    </div>
+                </div>
+                <div class="clearfix">
                     <form:label for="password" path="password" cssErrorClass="error"><spring:message code="create.label.password" /></form:label>
-                    <form:password path="password" />
+                    <div class="input">
+                    <form:password path="password" cssClass="xlarge" />
                     <form:errors path="password" cssClass="error" />
-                </p>
-                <p>
-                    <input name="reset" type="reset" value="<spring:message code="global.reset" />" /> 
-                    <input name="submit" type="submit" value="<spring:message code="global.submit" />" />
-                </p>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <input name="reset" type="reset" class="btn secondar" value="<spring:message code="global.reset" />" /> 
+                    <input name="submit" type="submit" class="btn primary" value="<spring:message code="global.submit" />" />
+                </div>
             </fieldset>
         </form:form>
+        </div>
+ 
     </body>
 </html>

@@ -24,6 +24,7 @@
     <mvc:view-controller path="/login" view-name="login" />
     <mvc:view-controller path="/error" view-name="error" />
     <mvc:view-controller path="/helloWorld" view-name="index" />
+	<mvc:view-controller path="/add" view-name="add" />
     <mvc:view-controller path="/register/success" view-name="createSuccess" />
 
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
