@@ -54,7 +54,5 @@ public class Book {
 	public void setUpdate_date(Date update_date) {
 		this.update_date = update_date;
 	}
-	
 
-	
 }
