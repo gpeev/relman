@@ -25,7 +25,7 @@
 
       </div>
 		<div class="row">
-			<div class="span1 columns">
+			<div class="span16 columns">
 			<p>Copyright 2011 - Epic Release</p>
 			</div>
 		</div>
