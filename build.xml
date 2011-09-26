@@ -1,6 +1,6 @@
 <project>
 
-    <property name="home" value="/Users/gpeev/Downloads/code/relman5/relman"/>
+    <property name="home" value="/Users/gpeev/github/relman"/>
 
     <target name="copyJs">
         <copy todir="${home}/target/relman-web-0.1">
