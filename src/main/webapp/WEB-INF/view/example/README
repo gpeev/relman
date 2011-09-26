@@ -1,0 +1,8 @@
+SiteMesh is used so html and body tags are not needed. the jsp is injected into the master decorator.
+
+Any new view directories [or pages] must be named in applicationContext-security.xml - this is to lock down pages that should be
+behind a login
+
+Each page/uri must be defined in the dispatcher-servlet.xml - this is so you don't have any unknown crap happening.
+
+

@@ -9,10 +9,8 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.springframework.security.web.authentication.rememberme.
-    PersistentRememberMeToken;
-import org.springframework.security.web.authentication.rememberme.
-    PersistentTokenRepository;
+import org.springframework.security.web.authentication.rememberme.PersistentRememberMeToken;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

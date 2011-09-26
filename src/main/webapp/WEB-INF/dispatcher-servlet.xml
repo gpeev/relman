@@ -27,6 +27,16 @@
 	<mvc:view-controller path="/add" view-name="add" />
     <mvc:view-controller path="/register/success" view-name="createSuccess" />
 
+
+
+
+    <mvc:view-controller path="/addExample" view-name="/example/add" />
+    <mvc:view-controller path="/listExample" view-name="/example/list" />
+    <mvc:view-controller path="/updateExample" view-name="/example/update" />
+
+
+
+
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="defaultErrorView" value="error" />
         <property name="warnLogCategory" value="com.jappstart" />
