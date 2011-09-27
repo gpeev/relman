@@ -124,7 +124,10 @@ public class AddController {
         
         
         if (binding.hasErrors()) {
-        	System.out.println("In binding error :(");
+        	System.out.println("In binding error :(" + binding.getObjectName());
+        	System.out.println("In binding error toString :(" + binding.toString());
+        	System.out.println("In binding error :(" + binding.getAllErrors().toString());
+        	System.out.println("In binding error count :(" + binding.getErrorCount());
             return "add";
         }
 
@@ -137,7 +140,7 @@ public class AddController {
             return "add";
         }
 
-        return "";
+        return "add";
     }
 
     //TODO Not working, and can be removed if we can't set dropdown via referenceData method - Dharmesh

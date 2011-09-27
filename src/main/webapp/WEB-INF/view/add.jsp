@@ -85,34 +85,35 @@
 		              </div>
 		            </div>
 		    
-		            <div class="clearfix">
-		              <label for="">Cast: </label>
+		    		<div class="clearfix">
+		              <form:label for="cast" path="cast">Cast: </form:label>
 		              <div class="input">
-		                <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text" />
-		              </div>
-		            </div>
-		            <!-- /clearfix -->
-		            <div class="clearfix">
-		              <label for="">Director: </label>
-		              <div class="input">
-		                <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text" />
+		                <form:input class="xlarge" path="cast" size="30" type="text"/>
+		                <form:errors path="cast" cssClass="error"/>
 		              </div>
 		            </div>
 		            
 		            <div class="clearfix">
-		              <label for="">Rating: </label>
+		              <form:label for="director" path="director">Director: </form:label>
 		              <div class="input">
-		                <input class="xlarge" id="xlInput" name="xlInput" size="10" type="text" style="width:50px;" />
+		                <form:input class="xlarge" path="director" size="30" type="text"/>
+		                <form:errors path="director" cssClass="error"/>
+		              </div>
+		            </div>
+		            
+		            <div class="clearfix">
+		              <form:label for="rating" path="rating">Director: </form:label>
+		              <div class="input">
+		                <form:input class="xlarge" path="rating" size="10" type="text" style="width:50px;"/>
+		                <form:errors path="rating" cssClass="error"/>
 		              </div>
 		            </div>
 		            
 		           	<div class="clearfix">
-				        <input name="reset" type="reset" class="btn large secondary" style="width=;" value="<spring:message code="global.reset" />" /> 
-				        <input name="submit" type="submit" class="btn large primary" style="width=;" value="<spring:message code="global.submit" />" />
+				        <input name="reset" type="reset" class="btn large secondary" style="width=auto;" value="<spring:message code="global.reset" />" /> 
+				        <input name="submit" type="submit" class="btn large primary" style="width=auto;" value="<spring:message code="global.submit" />" />
 			        </div>
-		                        
-		            <a href="#" class="btn large primary" style="left:150px; position:relative;">Add Release</a>
-	                
+		                             
 	            </fieldset>
 		        </form:form>
         	</div>

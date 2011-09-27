@@ -20,7 +20,7 @@ public class Add implements Serializable {
     private String title;
     @Pattern(regexp = ".+")
     private String title2;  //Alias title
-    @Pattern(regexp = "((0?[1-9]|1[012])/0?[1-9]|[12][0-9]|3[01])/((19|20)\\d\\d)", message = "Invalid date format, must be in the following format: MM/DD/YYYY.")
+    @Pattern(regexp = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/((19|20)\\d{2})", message = "Invalid date format, must be in the following format: MM/DD/YYYY.")
     private String releaseDate;
     @Pattern(regexp = ".+")
     private String imageLocation;
@@ -41,9 +41,9 @@ public class Add implements Serializable {
     private String link;
     @Pattern(regexp = ".+")
     private String link2;		
-    @Pattern(regexp = "((0?[1-9]|1[012])/0?[1-9]|[12][0-9]|3[01])/((19|20)\\d\\d)", message = "Invalid date format, must be in the following format: MM/DD/YYYY.")
+    @Pattern(regexp = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/((19|20)\\d{2})", message = "Invalid date format, must be in the following format: MM/DD/YYYY.")
     private String addDate; 		//All
-    @Pattern(regexp = "((0?[1-9]|1[012])/0?[1-9]|[12][0-9]|3[01])/((19|20)\\d\\d)", message = "Invalid date format, must be in the following format: MM/DD/YYYY.")
+    @Pattern(regexp = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/((19|20)\\d{2})", message = "Invalid date format, must be in the following format: MM/DD/YYYY.")
     private String updateDate; 	//All
     @Pattern(regexp = ".+")
     private String rating;  	//Video games, movies, TV shows
