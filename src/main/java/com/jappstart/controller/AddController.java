@@ -1,14 +1,16 @@
 
 package com.jappstart.controller;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -19,9 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.LocaleResolver;
 
-import com.jappstart.exception.DuplicateUserException;
 import com.jappstart.form.Add;
-
+import com.jappstart.model.vo.RelType;
 
 /**
  * The add controller.
@@ -35,7 +36,7 @@ public class AddController {
      * The add form attribute name.
      */
     protected static final String ADD = "add";
-
+    public Map<String,String> type = new LinkedHashMap<String, String>();
 
     /**
      * The locale resolver.
@@ -96,6 +97,8 @@ public class AddController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public final String create(final ModelMap model) {
         model.addAttribute(ADD, new Add());
+        System.out.println("Inside the submit method");
+        System.out.println("ADD Class has " + model.toString());
         return "add";
     }
 
@@ -113,18 +116,23 @@ public class AddController {
         @ModelAttribute(ADD) @Valid final Add add,
         final BindingResult binding, final HttpServletRequest request) {
         final Locale locale = localeResolver.resolveLocale(request);
-
+       
+        System.out.println("Inside the submit method");
+        System.out.println("ADD Class has " + add.toString());
+        System.out.println("ADD Class has " + add.getDescription());
+        System.out.println("ADD Class has " + add.getReleaseDate());
+        
+        
         if (binding.hasErrors()) {
+        	System.out.println("In binding error :(");
             return "add";
         }
 
-        System.out.println("Inside the submit method");
-
         try {
             //userDetailsService.addUser(user, locale);
-        } catch (DuplicateUserException e) {
+        } catch (Exception e) {
             binding.addError(new FieldError(ADD, "title",
-                messageSource.getMessage("create.error.username", null,
+                messageSource.getMessage("add.error.release", null,
                     locale)));
             return "add";
         }
@@ -132,4 +140,23 @@ public class AddController {
         return "";
     }
 
+    //TODO Not working, and can be removed if we can't set dropdown via referenceData method - Dharmesh
+	protected Map<String, Map<String, String>> referenceData(HttpServletRequest request) throws Exception {
+
+		System.out.println("RelType name= " + RelType.MOVIE.name());
+		System.out.println("RelType name= " + RelType.MOVIE.toString());
+		
+		Map<String, Map<String, String>> referenceData = new HashMap<String, Map<String, String>>();
+ 
+		type.put(RelType.TVSHOW.name(), RelType.TVSHOW.toString());
+		type.put(RelType.MOVIE.name(), RelType.MOVIE.toString());
+		type.put(RelType.MUSIC.name(), RelType.MUSIC.toString());
+		type.put(RelType.GAME.name(), RelType.GAME.toString());
+		type.put(RelType.BOOK.name(), RelType.BOOK.toString());
+		type.put(RelType.GADGET.name(), RelType.GADGET.toString());
+		referenceData.put("typeList", type);
+ 
+		return referenceData;
+	}
+    
 }

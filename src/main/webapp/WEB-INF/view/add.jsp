@@ -7,114 +7,117 @@
         <title><spring:message code="add.title" /></title>
     </head>
     <body>
-		<section id="addRelease">
-    <div class="page-header">
-      <h1><spring:message code="add.legend" /><small> Required Fields</small></h1>
-    </div>
-    <div class="row">
-      <div style="display:block;" id="addReleaseForm"> 
-        
-        <!--data. titile, type, airdate, graphics, clips, etc. -->
-        <form>
-          <fieldset>
-            <div class="clearfix">
-              <label for="">Title: </label>
-              <div class="input">
-                <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text" />
-              </div>
-            </div>
-            <!-- /clearfix -->
-            
-      <div class="clearfix">
-        <label for="textarea">Description</label>
-        <div class="input">
-          <textarea class="xxlarge" id="textarea" name="textarea"></textarea>
-          <span class="help-block">
-            Keep it short and sweet.
-          </span>
-        </div>
-      </div> <!-- /clearfix -->
-      
-            <div class="clearfix">
-              <label for="">Type</label>
-              <div class="input">
-                <select>
-                  <option>TV Show</option>
-                  <option>Movie</option>
-                  <option>Music</option>
-                  <option>Games</option>
-                  <option>Books</option>
-                  <option>Gadgets</option>
-                </select>
-              </div>
-            </div>
-            <!-- /clearfix -->
-              	<script type="text/javascript">
-                $(function() {
-                    $("#datepicker").datepicker();
-                });
-                </script>
-            <div class="clearfix">
-              <label>Release Date</label>
-              <div class="input">
-                <div class="inline-inputs">
-                  <input type="text" id="datepicker">
-                 </div>
-              </div>
-            </div>
-            <!-- /clearfix -->
-            
-            <div class="clearfix">
-              <label for="xlInput">Upload Image</label>
-              <div class="input">
-                <input class="input-file" id="fileInput" name="fileInput" type="file" />
-              </div>
-            </div>
-            <!-- /clearfix -->
+    <section id="addRelease">
+       	<div class="row">
+       		<div style="display:block;" id="addReleaseForm"> 
+			    <form:form modelAttribute="add" action="/add" method="post">
+	            <fieldset>      
+	               	<div class="page-header">
+      					<h1><spring:message code="add.legend" /><small> Required Fields</small></h1>
+    				</div>
+	                <div class="clearfix">
+	                    <form:label for="title" path="title" cssErrorClass="error"><spring:message code="add.label.title" /></form:label>
+	                    <div class="input">
+	                    <form:input path="title" cssClass="xlarge" size="30" type="text" />
+	                    <form:errors path="title" cssClass="error" />     
+	                    </div>    
+	                </div>	                
 
-    <div class="page-header">
-      <h3>More Info <small> Optional Fields</small></h3>
-    </div>
+	                <div class="clearfix">
+		              <form:label for="type" path="type" cssErrorClass="error"><spring:message code="add.label.type" /></form:label>
+		              <div class="input">
+		                <form:select path="type">
+		                  <form:option value="NONE" label="--- Select ---"/>
+		                  <form:option value="TVSHOW" label="TV Show"/>
+		                  <form:option value="MOVIE" label="Movie"/>
+		                  <form:option value="MUSIC" label="Music"/>
+		                  <form:option value="GAME" label="Video Game"/>
+		                  <form:option value="BOOK" label="Book"/>
+		                  <form:option value="GADGET" label="Gadget"/>
+		                </form:select>
+		              </div>
+		            </div>
+	                
+	                <div class="clearfix">
+	                    <form:label for="description" path="description" cssErrorClass="error"><spring:message code="add.label.description" /></form:label>
+	                    <div class="input">
+	                    <form:textarea path="description" cssClass="xxlarge" />
+	                    <span class="help-block">
+            				Keep it short and sweet.
+          				</span>
+	                    <form:errors path="description" cssClass="error" />
+	                    </div>
+	                </div>
+	                
+	                <script type="text/javascript">
+		                $(function() {
+		                    $("#datepicker").datepicker();
+		                });
+	                </script>
+	                
+	                <div class="clearfix">
+	                    <form:label for="releaseDate" path="releaseDate" cssErrorClass="error"><spring:message code="add.label.releaseDate" /></form:label>
+	                    <div class="input">
+	                    	<div class="inline-inputs">
+			                    <form:input path="releaseDate" cssClass="xlarge" type="text" id="datepicker"/>
+			                    <form:errors path="releaseDate" cssClass="error" />
+	                    	</div>
+	                    </div>
+	                </div>
+	                
+	                <div class="clearfix">
+	                    <form:label for="imageLocation" path="imageLocation" cssErrorClass="error"><spring:message code="add.label.image" /></form:label>
+	                    <div class="input">
+		                    <form:input path="imageLocation" cssClass="input-file" id="fileInput" type="file" />
+		                    <form:errors path="imageLocation" cssClass="error" />
+	                    </div>
+	                </div>
+
+				    <div class="page-header">
+				      <h3>More Info <small> Optional Fields</small></h3>
+				    </div>
     
-            <div class="clearfix">
-              <label for="">Network: </label>
-              <div class="input">
-                <input class="xlarge" id="xlInput" name="xlInput" size="10" type="text" style="width:100px;" />
-              </div>
-            </div>
-    
-                <div class="clearfix">
-              <label for="">Cast: </label>
-              <div class="input">
-                <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text" />
-              </div>
-            </div>
-            <!-- /clearfix -->
-                  <div class="clearfix">
-              <label for="">Director: </label>
-              <div class="input">
-                <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text" />
-              </div>
-            </div>
-            
-                  <div class="clearfix">
-              <label for="">Rating: </label>
-              <div class="input">
-                <input class="xlarge" id="xlInput" name="xlInput" size="10" type="text" style="width:50px;" />
-              </div>
-            </div>
-            
-            
-                        
-            <a href="#" class="btn large primary" style="left:150px; position:relative;">Add Release</a>
-            
-          </fieldset>
-        </form>
-        
-      </div>
-    </div>
-  </section>
-  
+		            <div class="clearfix">
+		              <form:label for="network" path="network">Network: </form:label>
+		              <div class="input">
+		                <form:input class="xlarge" path="network" size="10" type="text" style="width:100px;" />
+		                <form:errors path="network" cssClass="error"/>
+		              </div>
+		            </div>
+		    
+		            <div class="clearfix">
+		              <label for="">Cast: </label>
+		              <div class="input">
+		                <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text" />
+		              </div>
+		            </div>
+		            <!-- /clearfix -->
+		            <div class="clearfix">
+		              <label for="">Director: </label>
+		              <div class="input">
+		                <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text" />
+		              </div>
+		            </div>
+		            
+		            <div class="clearfix">
+		              <label for="">Rating: </label>
+		              <div class="input">
+		                <input class="xlarge" id="xlInput" name="xlInput" size="10" type="text" style="width:50px;" />
+		              </div>
+		            </div>
+		            
+		           	<div class="clearfix">
+				        <input name="reset" type="reset" class="btn large secondary" style="width=;" value="<spring:message code="global.reset" />" /> 
+				        <input name="submit" type="submit" class="btn large primary" style="width=;" value="<spring:message code="global.submit" />" />
+			        </div>
+		                        
+		            <a href="#" class="btn large primary" style="left:150px; position:relative;">Add Release</a>
+	                
+	            </fieldset>
+		        </form:form>
+        	</div>
+    	</div>
+  	</section>
 
     </body>
 </html>
