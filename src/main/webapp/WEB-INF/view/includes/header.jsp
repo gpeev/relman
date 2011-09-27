@@ -7,7 +7,7 @@
 <div class="topbar">
     <div class="container fixed">
         <h3><a class="logo" href="/">
-            <span>Release Qs</span>
+            <span>Epic Release</span>
         </a></h3>
         <ul style="float:right;">
 
