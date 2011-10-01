@@ -21,9 +21,7 @@ public class ErrorController {
      * @return the model and view
      */
     @RequestMapping(value = "/error/{errorCode}", method = RequestMethod.GET)
-    public final String errorCode(
-        @PathVariable("errorCode") final String errorCode,
-        final ModelMap modelMap) {
+    public final String errorCode(@PathVariable("errorCode") final String errorCode,final ModelMap modelMap) {
         modelMap.put("statusCode", errorCode);
         return "error";
     }

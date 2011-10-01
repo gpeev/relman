@@ -1,22 +1,22 @@
 package com.jappstart.controller;
 
-import com.jappstart.exception.DuplicateUserException;
-import com.jappstart.form.Add;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.LocaleResolver;
+import com.jappstart.exception.*;
+import com.jappstart.form.*;
+import com.jappstart.service.auth.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.context.*;
+import org.springframework.security.core.userdetails.*;
+import org.springframework.stereotype.*;
+import org.springframework.ui.*;
+import org.springframework.validation.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import java.util.Locale;
+import javax.servlet.http.*;
+import javax.validation.*;
+import java.util.*;
 
-
+@Controller
 public class ExampleController
 {
     /**
@@ -37,6 +37,28 @@ public class ExampleController
      */
     private MessageSource messageSource;
 
+    private EnhancedUserDetailsService userDetailsService;
+
+    /**
+     * Gets the user details service.
+     *
+     * @return the user details service
+     */
+    public final EnhancedUserDetailsService getUserDetailsService()
+    {
+        return userDetailsService;
+    }
+
+    /**
+     * Sets the user details service.
+     *
+     * @param userDetailsService the user details service
+     */
+    @Autowired
+    public final void setUserDetailsService(final EnhancedUserDetailsService userDetailsService)
+    {
+        this.userDetailsService = userDetailsService;
+    }
 
 
     /**
@@ -44,7 +66,8 @@ public class ExampleController
      *
      * @return the locale resolver
      */
-    public final LocaleResolver getLocaleResolver() {
+    public final LocaleResolver getLocaleResolver()
+    {
         return localeResolver;
     }
 
@@ -54,7 +77,8 @@ public class ExampleController
      * @param localeResolver the locale resolver
      */
     @Autowired
-    public final void setLocaleResolver(final LocaleResolver localeResolver) {
+    public final void setLocaleResolver(final LocaleResolver localeResolver)
+    {
         this.localeResolver = localeResolver;
     }
 
@@ -63,7 +87,8 @@ public class ExampleController
      *
      * @return the message source
      */
-    public final MessageSource getMessageSource() {
+    public final MessageSource getMessageSource()
+    {
         return messageSource;
     }
 
@@ -73,7 +98,8 @@ public class ExampleController
      * @param messageSource the message source
      */
     @Autowired
-    public final void setMessageSource(final MessageSource messageSource) {
+    public final void setMessageSource(final MessageSource messageSource)
+    {
         this.messageSource = messageSource;
     }
 
@@ -83,8 +109,9 @@ public class ExampleController
      * @param model the model map
      * @return the view name
      */
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public final String create(final ModelMap model) {
+    @RequestMapping(value = "/add2", method = RequestMethod.GET)
+    public final String create(final ModelMap model)
+    {
         model.addAttribute(ADD, new Add());
         return "add";
     }
@@ -93,33 +120,51 @@ public class ExampleController
     /**
      * Handle the create account form submission.
      *
-     * @param add the add form bean
+     * @param add     the add form bean
      * @param binding the binding result
      * @param request the HTTP servlet request
      * @return the path
      */
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/add2", method = RequestMethod.POST)
     public final String submit(
-        @ModelAttribute(ADD) @Valid final Add add,
-        final BindingResult binding, final HttpServletRequest request) {
+            @ModelAttribute(ADD) @Valid final Add add,
+            final BindingResult binding, final HttpServletRequest request)
+    {
         final Locale locale = localeResolver.resolveLocale(request);
 
-        if (binding.hasErrors()) {
+        if (binding.hasErrors())
+        {
             return "add";
         }
 
         System.out.println("Inside the submit method");
 
-        try {
+        try
+        {
             //userDetailsService.addUser(user, locale);
-        } catch (DuplicateUserException e) {
+        }
+        catch (DuplicateUserException e)
+        {
             binding.addError(new FieldError(ADD, "title",
-                messageSource.getMessage("create.error.username", null,
-                    locale)));
+                    messageSource.getMessage("create.error.username", null, locale)));
             return "add";
         }
 
         return "";
+    }
+
+
+    @RequestMapping(value = "/listUsersExample", method = RequestMethod.GET)
+    public final String listUsers()
+    {
+        List<UserDetails> users = userDetailsService.loadUsers();
+        for (int i = 0; i < users.size(); i++)
+        {
+            UserDetails detail = users.get(i);
+            System.out.println("User: "+detail.getUsername()+"="+detail.getPassword());
+        }
+
+        return "/remoteExample";
     }
 
 

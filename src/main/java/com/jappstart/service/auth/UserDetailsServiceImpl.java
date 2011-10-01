@@ -1,36 +1,34 @@
-
 package com.jappstart.service.auth;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
-import org.springframework.security.core.authority.GrantedAuthorityImpl;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.memcache.Expiration;
+import com.google.appengine.api.memcache.MemcacheService;
+import com.google.appengine.api.taskqueue.Queue;
+import com.google.appengine.api.taskqueue.QueueFactory;
+import com.google.appengine.api.taskqueue.TaskOptions;
+import com.jappstart.exception.DuplicateUserException;
+import com.jappstart.model.auth.UserAccount;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.GrantedAuthorityImpl;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.taskqueue.Queue;
-import com.google.appengine.api.taskqueue.QueueFactory;
-import com.google.appengine.api.taskqueue.TaskOptions;
-import com.google.appengine.api.memcache.Expiration;
-import com.google.appengine.api.memcache.MemcacheService;
-import com.jappstart.exception.DuplicateUserException;
-import com.jappstart.model.auth.UserAccount;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * The user details service implementation.
  */
 @Service
-public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
+public class UserDetailsServiceImpl implements EnhancedUserDetailsService
+{
 
     /**
      * The default cache expiration in seconds.
@@ -46,7 +44,7 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      * The select user query.
      */
     private static final String SELECT_USER =
-        "SELECT u FROM UserAccount u WHERE username = :username";
+            "SELECT u FROM UserAccount u WHERE username = :username";
 
     /**
      * The entity manager.
@@ -79,7 +77,8 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      *
      * @return the mail task name
      */
-    public final String getMailTaskName() {
+    public final String getMailTaskName()
+    {
         return mailTaskName;
     }
 
@@ -88,7 +87,8 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      *
      * @param mailTaskName the mail task name
      */
-    public final void setMailTaskName(final String mailTaskName) {
+    public final void setMailTaskName(final String mailTaskName)
+    {
         this.mailTaskName = mailTaskName;
     }
 
@@ -97,7 +97,8 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      *
      * @return the mail task URL
      */
-    public final String getMailTaskUrl() {
+    public final String getMailTaskUrl()
+    {
         return mailTaskUrl;
     }
 
@@ -106,7 +107,8 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      *
      * @param mailTaskUrl the mail task URL
      */
-    public final void setMailTaskUrl(final String mailTaskUrl) {
+    public final void setMailTaskUrl(final String mailTaskUrl)
+    {
         this.mailTaskUrl = mailTaskUrl;
     }
 
@@ -115,7 +117,8 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      *
      * @return the datastore service
      */
-    public final DatastoreService getDatastoreService() {
+    public final DatastoreService getDatastoreService()
+    {
         return datastoreService;
     }
 
@@ -125,7 +128,8 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      * @param datastoreService the datastore service
      */
     public final void setDatastoreService(
-        final DatastoreService datastoreService) {
+            final DatastoreService datastoreService)
+    {
         this.datastoreService = datastoreService;
     }
 
@@ -134,7 +138,8 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      *
      * @return the memcache service
      */
-    public final MemcacheService getMemcacheService() {
+    public final MemcacheService getMemcacheService()
+    {
         return memcacheService;
     }
 
@@ -144,9 +149,54 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      * @param memcacheService the memcache service
      */
     public final void setMemcacheService(
-        final MemcacheService memcacheService) {
+            final MemcacheService memcacheService)
+    {
         this.memcacheService = memcacheService;
     }
+
+
+    @Transactional
+    public List<UserDetails> loadUsers()
+    {
+        final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+        List<UserDetails> u = new ArrayList<UserDetails>();
+        //UserAccount user = (UserAccount) memcacheService.get(username);
+
+
+        System.out.println("EntityMgr["+entityManager.isOpen()+"]: "+entityManager.getFlushMode().name());
+
+        entityManager.clear();
+
+        Query query = entityManager.createQuery("SELECT u FROM UserAccount u");
+
+        System.out.println("Query2222: "+query);
+
+        try
+        {
+
+            List users = query.getResultList();
+           // System.out.println("ResultsFound:"+users.size());
+            for (int i = 0; i < users.size(); i++)
+            {
+                UserAccount user = (UserAccount) users.get(i);
+                authorities.add(new GrantedAuthorityImpl(user.getRole()));
+                u.add(new EnhancedUser(user.getUsername(), user.getEmail(),
+                        user.getDisplayName(), user.getPassword(), user.getSalt(),
+                        user.isEnabled(), user.isAccountNonExpired(),
+                        user.isCredentialsNonExpired(), user.isAccountNonLocked(),
+                        authorities));
+            }
+
+        }
+        catch (NoResultException e)
+        {
+            throw new UsernameNotFoundException("Username not found.", e);
+        }
+
+
+        return u;
+    }
+
 
     /**
      * Locates the user based on the username.
@@ -155,22 +205,27 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      * @return the user details
      */
     @Override
-    public final UserDetails loadUserByUsername(final String username) {
+    public final UserDetails loadUserByUsername(final String username)
+    {
         final List<GrantedAuthority> authorities =
-            new ArrayList<GrantedAuthority>();
+                new ArrayList<GrantedAuthority>();
         UserAccount user = (UserAccount) memcacheService.get(username);
 
-        if (user == null) {
+        if (user == null)
+        {
             final Query query = entityManager.createQuery(
-                "SELECT u FROM UserAccount u WHERE username = :username");
+                    "SELECT u FROM UserAccount u WHERE username = :username");
             query.setParameter(USERNAME, username);
 
-            try {
+            try
+            {
                 user = (UserAccount) query.getSingleResult();
 
                 memcacheService.put(username, user,
-                    Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
-            } catch (NoResultException e) {
+                        Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
+            }
+            catch (NoResultException e)
+            {
                 throw new UsernameNotFoundException("Username not found.", e);
             }
         }
@@ -178,10 +233,10 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
         authorities.add(new GrantedAuthorityImpl(user.getRole()));
 
         return new EnhancedUser(user.getUsername(), user.getEmail(),
-            user.getDisplayName(), user.getPassword(), user.getSalt(),
-            user.isEnabled(), user.isAccountNonExpired(),
-            user.isCredentialsNonExpired(), user.isAccountNonLocked(),
-            authorities);
+                user.getDisplayName(), user.getPassword(), user.getSalt(),
+                user.isEnabled(), user.isAccountNonExpired(),
+                user.isCredentialsNonExpired(), user.isAccountNonLocked(),
+                authorities);
     }
 
     /**
@@ -191,20 +246,25 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      * @return the user account
      */
     @Override
-    public final UserAccount getUser(final String username) {
+    public final UserAccount getUser(final String username)
+    {
         UserAccount user = (UserAccount) memcacheService.get(username);
 
-        if (user == null) {
+        if (user == null)
+        {
             final Query query = entityManager.createQuery(
-                "SELECT u FROM UserAccount u WHERE username = :username");
+                    "SELECT u FROM UserAccount u WHERE username = :username");
             query.setParameter(USERNAME, username);
 
-            try {
+            try
+            {
                 user = (UserAccount) query.getSingleResult();
 
                 memcacheService.put(username, user,
-                    Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
-            } catch (NoResultException e) {
+                        Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
+            }
+            catch (NoResultException e)
+            {
                 return null;
             }
         }
@@ -215,38 +275,41 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
     /**
      * Adds a user.
      *
-     * @param user the user
+     * @param user   the user
      * @param locale the locale
      */
     @Override
     @Transactional
-    public final void addUser(final UserAccount user, final Locale locale) {
+    public final void addUser(final UserAccount user, final Locale locale)
+    {
         final UserAccount cachedUser = (UserAccount) memcacheService.get(
-            user.getUsername());
+                user.getUsername());
 
-        if (cachedUser != null) {
+        if (cachedUser != null)
+        {
             throw new DuplicateUserException();
         }
 
         final Query query = entityManager.createQuery(
-            "SELECT u FROM UserAccount u WHERE username = :username");
+                "SELECT u FROM UserAccount u WHERE username = :username");
         query.setParameter(USERNAME, user.getUsername());
 
         @SuppressWarnings("unchecked")
         final List results = query.getResultList();
-        if (results != null && !results.isEmpty()) {
+        if (results != null && !results.isEmpty())
+        {
             throw new DuplicateUserException();
         }
 
         entityManager.persist(user);
 
         memcacheService.put(user.getUsername(), user,
-            Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
+                Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
 
         final TaskOptions taskOptions =
-            TaskOptions.Builder.withUrl(mailTaskUrl)
-            .param("username", user.getUsername())
-            .param("locale", locale.toString());
+                TaskOptions.Builder.withUrl(mailTaskUrl)
+                        .param("username", user.getUsername())
+                        .param("locale", locale.toString());
 
         final Queue queue = QueueFactory.getQueue(mailTaskName);
         queue.add(datastoreService.getCurrentTransaction(), taskOptions);
@@ -260,22 +323,26 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      */
     @Override
     @Transactional
-    public final boolean activateUser(final String key) {
+    public final boolean activateUser(final String key)
+    {
         final Query query = entityManager.createQuery(
-            "SELECT u FROM UserAccount u WHERE activationKey = :key");
+                "SELECT u FROM UserAccount u WHERE activationKey = :key");
         query.setParameter("key", key);
 
-        try {
+        try
+        {
             final UserAccount user = (UserAccount) query.getSingleResult();
             user.setEnabled(true);
 
             entityManager.persist(user);
 
             memcacheService.put(user.getUsername(), user,
-                Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
+                    Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
 
             return true;
-        } catch (NoResultException e) {
+        }
+        catch (NoResultException e)
+        {
             return false;
         }
     }
@@ -287,19 +354,24 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      * @return true if sent; false otherwise
      */
     @Override
-    public final boolean isActivationEmailSent(final String username) {
+    public final boolean isActivationEmailSent(final String username)
+    {
         UserAccount user = (UserAccount) memcacheService.get(username);
 
-        if (user == null) {
+        if (user == null)
+        {
             final Query query = entityManager.createQuery(SELECT_USER);
             query.setParameter(USERNAME, username);
 
-            try {
+            try
+            {
                 user = (UserAccount) query.getSingleResult();
 
                 memcacheService.put(username, user,
-                    Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
-            } catch (NoResultException e) {
+                        Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
+            }
+            catch (NoResultException e)
+            {
                 throw new UsernameNotFoundException("Username not found.", e);
             }
         }
@@ -314,19 +386,23 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService {
      */
     @Override
     @Transactional
-    public final void activationEmailSent(final String username) {
+    public final void activationEmailSent(final String username)
+    {
         final Query query = entityManager.createQuery(SELECT_USER);
         query.setParameter(USERNAME, username);
 
-        try {
+        try
+        {
             final UserAccount user = (UserAccount) query.getSingleResult();
             user.setActivationEmailSent(true);
 
             entityManager.persist(user);
 
             memcacheService.put(user.getUsername(), user,
-                Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
-        } catch (NoResultException e) {
+                    Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
+        }
+        catch (NoResultException e)
+        {
             throw new UsernameNotFoundException("Username not found.", e);
         }
     }

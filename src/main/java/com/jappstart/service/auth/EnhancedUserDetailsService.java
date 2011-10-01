@@ -1,9 +1,9 @@
 
 package com.jappstart.service.auth;
 
-import java.util.Locale;
+import java.util.*;
 
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.*;
 
 import com.jappstart.model.auth.UserAccount;
 
@@ -50,5 +50,7 @@ public interface EnhancedUserDetailsService extends UserDetailsService {
      * @param username the username
      */
     void activationEmailSent(final String username);
+
+     List<UserDetails> loadUsers();
 
 }

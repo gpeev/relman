@@ -64,7 +64,7 @@
                             <li><a href="">Games</a></li>
                             <li><a href="">Books</a></li>
                             <li><a href="">Gadgets</a></li>
-                            <li><a href="addExample">Examples</a></li>
+                            <li><a href="/listUsersExample">Examples</a></li>
                         </ul>
                         <form action="" style="float:right;">
                             <input placeholder="Search" type="text">

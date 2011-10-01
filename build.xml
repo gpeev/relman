@@ -1,10 +1,16 @@
 <project>
 
-    <property name="home" value="/Users/gpeev/github/relman"/>
+    <property name="home" value="."/>
 
     <target name="copyJs">
-        <copy todir="${home}/target/relman-web-0.1">
+        <copy todir="${home}/target/relman-web-0.2">
             <fileset dir="${home}/src/main/webapp" excludes="**/*.jsp"/>
+        </copy>
+    </target>
+
+    <target name="copyAll">
+        <copy todir="${home}/target/relman-web-0.2">
+            <fileset dir="${home}/src/main/webapp"/>
         </copy>
     </target>
 
