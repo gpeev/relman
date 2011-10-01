@@ -116,23 +116,15 @@ public class AddController {
         @ModelAttribute(ADD) @Valid final Add add,
         final BindingResult binding, final HttpServletRequest request) {
         final Locale locale = localeResolver.resolveLocale(request);
-       
-        System.out.println("Inside the submit method");
-        System.out.println("ADD Class has " + add.toString());
-        System.out.println("ADD Class has " + add.getDescription());
-        System.out.println("ADD Class has " + add.getReleaseDate());
-        
         
         if (binding.hasErrors()) {
-        	System.out.println("In binding error :(" + binding.getObjectName());
-        	System.out.println("In binding error toString :(" + binding.toString());
-        	System.out.println("In binding error :(" + binding.getAllErrors().toString());
-        	System.out.println("In binding error count :(" + binding.getErrorCount());
+        	System.out.println("Inside the Binding Errors block;");
             return "add";
         }
 
         try {
-            //userDetailsService.addUser(user, locale);
+        	//TODO Implement saving of the release
+            //releaseDetailsService.addRelease(user, locale);
         } catch (Exception e) {
             binding.addError(new FieldError(ADD, "title",
                 messageSource.getMessage("add.error.release", null,
