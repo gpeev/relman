@@ -6,6 +6,8 @@ import java.util.Date;
 
 import javax.validation.constraints.Pattern;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 /**
  * The add form bean.
  */
@@ -22,8 +24,9 @@ public class Add implements Serializable {
     private String title2;  //Alias title
     @Pattern(regexp = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/((19|20)\\d{2})", message = "Invalid date format, must be in the following format: MM/DD/YYYY.")
     private String releaseDate;
-    @Pattern(regexp = ".+")
-    private String imageLocation;
+
+    private CommonsMultipartFile image;
+    
     @Pattern(regexp = ".+")
     private String type;
     @Pattern(regexp = ".+")
@@ -146,14 +149,14 @@ public class Add implements Serializable {
     /* CHECKSTYLE:ON */
 
     /* CHECKSTYLE:OFF */
-    public void setImageLocation(final String imageLocation) {
-        this.imageLocation = imageLocation;
+    public void setImage(final CommonsMultipartFile image) {
+        this.image = image;
     }
     /* CHECKSTYLE:ON */
 
     /* CHECKSTYLE:OFF */
-    public String getImageLocation() {
-        return imageLocation;
+    public CommonsMultipartFile getImage() {
+        return image;
     }
     /* CHECKSTYLE:ON */
 
