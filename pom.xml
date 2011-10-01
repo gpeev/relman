@@ -63,7 +63,7 @@
 
     </pluginRepositories>
 
-    <distributionManagement>
+    <!--distributionManagement>
         <repository>
             <id>googlecode.jappstart.release</id>
             <url>dav:https://jappstart.googlecode.com/svn/maven-repo/releases</url>
@@ -73,7 +73,7 @@
             <url>dav:https://jappstart.googlecode.com/svn/maven-repo/snapshots</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement-->
 
     <dependencies>
 
@@ -170,7 +170,7 @@
 
         <!-- required for FileBot -->
         <dependency>
-            <groupId>ehcache</groupId>
+            <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
             <version>1.2.3</version>
         </dependency>
@@ -274,6 +274,13 @@
             <artifactId>appengine-api-1.0-sdk</artifactId>
             <version>${gae.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-remote-api</artifactId>
+            <version>${gae.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
