@@ -9,3 +9,20 @@ mvn gae:deploy -P dev        to deploy to your dev app engine app
 
 mvn clean package -P prod    to create a new prod build
 mvn gae:deploy -P prod       to deploy to your prod app engine app
+
+
+
+
+
+
+
+
+
+removed from add.jsp
+<div class="clearfix">
+    <form:label for="image" path="image" cssErrorClass="error"><spring:message code="add.label.image" /></form:label>
+    <div class="input">
+        <form:input path="image" cssClass="input-file" id="fileInput" type="file" />
+        <form:errors path="image" cssClass="error" />
+    </div>
+</div>

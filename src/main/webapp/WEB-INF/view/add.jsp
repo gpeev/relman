@@ -76,13 +76,7 @@
 		                    </div>
 		                </div>
 		                
-		                <div class="clearfix">
-		                    <form:label for="image" path="image" cssErrorClass="error"><spring:message code="add.label.image" /></form:label>
-		                    <div class="input">
-			                    <form:input path="image" cssClass="input-file" id="fileInput" type="file" />
-			                    <form:errors path="image" cssClass="error" />
-		                    </div>
-		                </div>
+
 					</div>
 					
 					<div class="span2" style="height:30px;">

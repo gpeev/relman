@@ -162,20 +162,11 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService
         List<UserDetails> u = new ArrayList<UserDetails>();
         //UserAccount user = (UserAccount) memcacheService.get(username);
 
-
-        System.out.println("EntityMgr["+entityManager.isOpen()+"]: "+entityManager.getFlushMode().name());
-
-        entityManager.clear();
-
         Query query = entityManager.createQuery("SELECT u FROM UserAccount u");
-
-        System.out.println("Query2222: "+query);
 
         try
         {
-
             List users = query.getResultList();
-           // System.out.println("ResultsFound:"+users.size());
             for (int i = 0; i < users.size(); i++)
             {
                 UserAccount user = (UserAccount) users.get(i);
@@ -186,13 +177,11 @@ public class UserDetailsServiceImpl implements EnhancedUserDetailsService
                         user.isCredentialsNonExpired(), user.isAccountNonLocked(),
                         authorities));
             }
-
         }
         catch (NoResultException e)
         {
             throw new UsernameNotFoundException("Username not found.", e);
         }
-
 
         return u;
     }

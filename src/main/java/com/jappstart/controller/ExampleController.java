@@ -2,6 +2,8 @@ package com.jappstart.controller;
 
 import com.jappstart.exception.*;
 import com.jappstart.form.*;
+import com.jappstart.model.vo.*;
+import com.jappstart.service.*;
 import com.jappstart.service.auth.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.context.*;
@@ -38,6 +40,20 @@ public class ExampleController
     private MessageSource messageSource;
 
     private EnhancedUserDetailsService userDetailsService;
+
+    private ReleaseService releaseService;
+
+    public ReleaseService getReleaseService()
+    {
+        return releaseService;
+    }
+
+    @Autowired
+    public final void setReleaseService(final ReleaseService releaseService)
+    {
+        this.releaseService = releaseService;
+    }
+
 
     /**
      * Gets the user details service.
@@ -155,16 +171,22 @@ public class ExampleController
 
 
     @RequestMapping(value = "/listUsersExample", method = RequestMethod.GET)
-    public final String listUsers()
+    public final Map listUsers()
     {
-        List<UserDetails> users = userDetailsService.loadUsers();
-        for (int i = 0; i < users.size(); i++)
+        List<Release> rs = releaseService.loadReleases();
+        System.out.println("Found Releases:"+ rs.size());
+        for (int i = 0; i < rs.size(); i++)
         {
-            UserDetails detail = users.get(i);
-            System.out.println("User: "+detail.getUsername()+"="+detail.getPassword());
+            Release r = rs.get(i);
+            System.out.println(i+") "+r);
         }
 
-        return "/remoteExample";
+        Map ret = new HashMap();
+        ret.put("a","hi");
+        ret.put("b","bye");
+
+
+        return ret;
     }
 
 

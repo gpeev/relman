@@ -1,28 +1,19 @@
-
 package com.jappstart.controller;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Locale;
-import java.util.Map;
+import com.jappstart.form.*;
+import com.jappstart.model.vo.*;
+import com.jappstart.service.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.context.*;
+import org.springframework.stereotype.*;
+import org.springframework.ui.*;
+import org.springframework.validation.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.LocaleResolver;
-
-import com.jappstart.form.Add;
-import com.jappstart.model.vo.RelType;
+import javax.servlet.http.*;
+import javax.validation.*;
+import java.util.*;
 
 /**
  * The add controller.
@@ -30,13 +21,14 @@ import com.jappstart.model.vo.RelType;
 @Controller
 @RequestMapping("/add")
 @SessionAttributes(AddController.ADD)
-public class AddController {
+public class AddController
+{
 
     /**
      * The add form attribute name.
      */
     protected static final String ADD = "add";
-    public Map<String,String> type = new LinkedHashMap<String, String>();
+    public Map<String, String> type = new LinkedHashMap<String, String>();
 
     /**
      * The locale resolver.
@@ -49,13 +41,26 @@ public class AddController {
     private MessageSource messageSource;
 
 
+    private ReleaseService releaseService;
+
+    public ReleaseService getReleaseService()
+    {
+        return releaseService;
+    }
+
+    @Autowired
+    public void setReleaseService(ReleaseService releaseService)
+    {
+        this.releaseService = releaseService;
+    }
 
     /**
      * Gets the locale resolver.
      *
      * @return the locale resolver
      */
-    public final LocaleResolver getLocaleResolver() {
+    public final LocaleResolver getLocaleResolver()
+    {
         return localeResolver;
     }
 
@@ -65,7 +70,8 @@ public class AddController {
      * @param localeResolver the locale resolver
      */
     @Autowired
-    public final void setLocaleResolver(final LocaleResolver localeResolver) {
+    public final void setLocaleResolver(final LocaleResolver localeResolver)
+    {
         this.localeResolver = localeResolver;
     }
 
@@ -74,7 +80,8 @@ public class AddController {
      *
      * @return the message source
      */
-    public final MessageSource getMessageSource() {
+    public final MessageSource getMessageSource()
+    {
         return messageSource;
     }
 
@@ -84,7 +91,8 @@ public class AddController {
      * @param messageSource the message source
      */
     @Autowired
-    public final void setMessageSource(final MessageSource messageSource) {
+    public final void setMessageSource(final MessageSource messageSource)
+    {
         this.messageSource = messageSource;
     }
 
@@ -95,7 +103,8 @@ public class AddController {
      * @return the view name
      */
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public final String create(final ModelMap model) {
+    public final String create(final ModelMap model)
+    {
         model.addAttribute(ADD, new Add());
         System.out.println("Inside the submit method");
         System.out.println("ADD Class has " + model.toString());
@@ -106,29 +115,42 @@ public class AddController {
     /**
      * Handle the create account form submission.
      *
-     * @param add the add form bean
+     * @param add     the add form bean
      * @param binding the binding result
      * @param request the HTTP servlet request
      * @return the path
      */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public final String submit(
-        @ModelAttribute(ADD) @Valid final Add add,
-        final BindingResult binding, final HttpServletRequest request) {
+            @ModelAttribute(ADD) @Valid final Add add,
+            final BindingResult binding, final HttpServletRequest request)
+    {
         final Locale locale = localeResolver.resolveLocale(request);
-        
-        if (binding.hasErrors()) {
-        	System.out.println("Inside the Binding Errors block;");
+
+        if (binding.hasErrors())
+        {
+            System.out.println("Inside the Binding Errors block;");
             return "add";
         }
 
-        try {
-        	//TODO Implement saving of the release
-            //releaseDetailsService.addRelease(user, locale);
-        } catch (Exception e) {
+        System.out.println("AddControler about to add release");
+
+        try
+        {
+            //TODO Implement saving of the release
+
+
+            
+            releaseService.addRelease(add, locale);
+        }
+        catch (Exception e)
+        {
+
+            e.printStackTrace();
+
             binding.addError(new FieldError(ADD, "title",
-                messageSource.getMessage("add.error.release", null,
-                    locale)));
+                    messageSource.getMessage("add.error.release", null,
+                            locale)));
             return "add";
         }
 
@@ -136,22 +158,24 @@ public class AddController {
     }
 
     //TODO Not working, and can be removed if we can't set dropdown via referenceData method - Dharmesh
-	protected Map<String, Map<String, String>> referenceData(HttpServletRequest request) throws Exception {
 
-		System.out.println("RelType name= " + RelType.MOVIE.name());
-		System.out.println("RelType name= " + RelType.MOVIE.toString());
-		
-		Map<String, Map<String, String>> referenceData = new HashMap<String, Map<String, String>>();
- 
-		type.put(RelType.TVSHOW.name(), RelType.TVSHOW.toString());
-		type.put(RelType.MOVIE.name(), RelType.MOVIE.toString());
-		type.put(RelType.MUSIC.name(), RelType.MUSIC.toString());
-		type.put(RelType.GAME.name(), RelType.GAME.toString());
-		type.put(RelType.BOOK.name(), RelType.BOOK.toString());
-		type.put(RelType.GADGET.name(), RelType.GADGET.toString());
-		referenceData.put("typeList", type);
- 
-		return referenceData;
-	}
-    
+    protected Map<String, Map<String, String>> referenceData(HttpServletRequest request) throws Exception
+    {
+
+        System.out.println("RelType name= " + RelType.MOVIE.name());
+        System.out.println("RelType name= " + RelType.MOVIE.toString());
+
+        Map<String, Map<String, String>> referenceData = new HashMap<String, Map<String, String>>();
+
+        type.put(RelType.TVSHOW.name(), RelType.TVSHOW.toString());
+        type.put(RelType.MOVIE.name(), RelType.MOVIE.toString());
+        type.put(RelType.MUSIC.name(), RelType.MUSIC.toString());
+        type.put(RelType.GAME.name(), RelType.GAME.toString());
+        type.put(RelType.BOOK.name(), RelType.BOOK.toString());
+        type.put(RelType.GADGET.name(), RelType.GADGET.toString());
+        referenceData.put("typeList", type);
+
+        return referenceData;
+    }
+
 }
