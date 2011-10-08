@@ -23,7 +23,11 @@
         <gae.home>
             ${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}
         </gae.home>
-        <rebel.home>/Users/dbpatel219/Downloads/jrebel</rebel.home>
+        <!--
+        to get the free version of jrebel, follow the instructions in the link.
+        http://www.zeroturnaround.com/jrebel/jrebel-social-tutorial/
+        -->
+        <rebel.home>/Applications/ZeroTurnaround/JRebel</rebel.home>
         <!--rebel.home>${env.REBEL_HOME}</rebel.home-->
         <maven.gae.plugin.version>0.9.1</maven.gae.plugin.version>
         <datanucleus.version>1.1.5</datanucleus.version>
