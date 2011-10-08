@@ -13,6 +13,8 @@
             </list>
         </property>
     </bean>
+	
+	
 
     <bean id="mailService" class="com.jappstart.service.mail.MailService">
         <property name="fromAddress" value="${mail.fromAddress}" />

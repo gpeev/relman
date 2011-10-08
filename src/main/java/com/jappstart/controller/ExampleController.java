@@ -128,6 +128,7 @@ public class ExampleController
     @RequestMapping(value = "/add2", method = RequestMethod.GET)
     public final String create(final ModelMap model)
     {
+    	
         model.addAttribute(ADD, new Add());
         return "add";
     }

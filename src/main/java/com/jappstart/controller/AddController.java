@@ -129,7 +129,8 @@ public class AddController
 
         if (binding.hasErrors())
         {
-            System.out.println("Inside the Binding Errors block;");
+        	System.out.println("Binding Error: " + binding.getErrorCount());
+            System.out.println("Inside the Binding Errors block = " + binding.getAllErrors().toString());
             return "add";
         }
 

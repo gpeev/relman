@@ -41,7 +41,12 @@
         <beans:property name="mailTaskUrl" value="/task/mail/activate" />
         <beans:property name="memcacheService" ref="memcacheServiceUser" />
     </beans:bean>
-
+	
+	<beans:bean id="releaseService" class="com.jappstart.service.ReleaseServiceImpl">
+        <beans:property name="datastoreService" ref="datastoreService" />
+        <beans:property name="memcacheService" ref="memcacheServiceUser" />
+    </beans:bean>
+	
     <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="userDetailsService">
             <password-encoder hash="sha-256" base64="true">
