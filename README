@@ -13,6 +13,10 @@ mvn gae:deploy -P prod       to deploy to your prod app engine app
 
 
 
+GUI Design is based on the Twitter BootStrap
+http://twitter.github.com/bootstrap/
+
+
 
 
 

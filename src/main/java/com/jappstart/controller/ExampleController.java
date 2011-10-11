@@ -172,22 +172,23 @@ public class ExampleController
 
 
     @RequestMapping(value = "/listUsersExample", method = RequestMethod.GET)
-    public final Map listUsers()
+    public final String listUsers(HttpServletRequest req)
     {
         List<Release> rs = releaseService.loadReleases();
         System.out.println("Found Releases:"+ rs.size());
+
+        req.setAttribute("releaseList",rs);
+
+        /*
         for (int i = 0; i < rs.size(); i++)
         {
             Release r = rs.get(i);
             System.out.println(i+") "+r);
+            req.setAttribute(i+"+"+r.getTitle(), r.toString());
         }
+        */
 
-        Map ret = new HashMap();
-        ret.put("a","hi");
-        ret.put("b","bye");
-
-
-        return ret;
+        return "forward:listExample";
     }
 
 
