@@ -109,8 +109,7 @@ public class ReleaseServiceImpl implements ReleaseService{
                 throw new RuntimeException("Found Duplicate Release in datastore");
             }
         } 
-        
-        System.out.println("In ReleaseService 4444444");
+
         //todo: maybe extend Release with Add so we don't have to dup all that
         //todo: or it my be better to be specific - Movie, Book, etc.
         r = new Release(a.getTitle(), a.getType());
@@ -118,18 +117,24 @@ public class ReleaseServiceImpl implements ReleaseService{
         	System.out.println("Release is not null " + r.getTitle());
         	entityManager.persist(r);
         }
-        System.out.println("In ReleaseService 555555");
+   
         memcacheService.put(r.getKey(), r, Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
         System.out.println(r+" has been persisted.");
     }
 
 
-    @Transactional
-    public List<Release> loadReleases()
+    @SuppressWarnings("unchecked")
+	@Transactional
+    public List<Release> loadReleases(RelType type)
     {
         List<Release> r = null;
-        Query query = entityManager.createQuery("SELECT u FROM Release u");
-
+        Query query;
+        if (type != null){
+        	query = entityManager.createQuery("SELECT u FROM Release u where u.type='" + type.name() +"'");
+        } else {
+        	query = entityManager.createQuery("SELECT u FROM Release u");
+        }
+        
         try
         {
             r = query.getResultList();
@@ -145,4 +150,5 @@ public class ReleaseServiceImpl implements ReleaseService{
         }
         return r;
     }
-}
+    
+} 

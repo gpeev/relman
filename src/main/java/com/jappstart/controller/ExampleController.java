@@ -7,7 +7,6 @@ import com.jappstart.service.*;
 import com.jappstart.service.auth.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.context.*;
-import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.validation.*;
@@ -174,7 +173,7 @@ public class ExampleController
     @RequestMapping(value = "/listUsersExample", method = RequestMethod.GET)
     public final String listUsers(HttpServletRequest req)
     {
-        List<Release> rs = releaseService.loadReleases();
+        List<Release> rs = releaseService.loadReleases(RelType.TVSHOW);
         System.out.println("Found Releases:"+ rs.size());
 
         req.setAttribute("releaseList",rs);
