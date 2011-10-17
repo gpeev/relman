@@ -173,9 +173,14 @@ public class ExampleController
     @RequestMapping(value = "/listUsersExample", method = RequestMethod.GET)
     public final String listUsers(HttpServletRequest req)
     {
-        List<Release> rs = releaseService.loadReleases(RelType.TVSHOW);
-        System.out.println("Found Releases:"+ rs.size());
-
+    	RelType filterType = null;
+    	if (req.getParameter("type") != null){
+    		filterType = RelType.fromString(req.getParameter("type"));
+    	}
+        
+    	List<Release> rs = releaseService.loadReleases(filterType);
+        System.out.println("Found Releases:"+ rs.size());        
+        
         req.setAttribute("releaseList",rs);
 
         /*

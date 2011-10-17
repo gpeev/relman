@@ -22,7 +22,7 @@ public enum RelType {
 	public static RelType fromString(String text) {
 		if (text != null) {
 			for (RelType b : RelType.values()) {
-				if (text.equalsIgnoreCase(b.text)) {
+				if (text.equalsIgnoreCase(b.name())) {
 					return b;
 				}
 			}

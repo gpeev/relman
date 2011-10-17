@@ -58,12 +58,12 @@
                     <div class="container fixed">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
-                            <li><a href="">TV</a></li>
-                            <li><a href="/add">Movies</a></li>
-                            <li><a href="">Music</a></li>
-                            <li><a href="">Games</a></li>
-                            <li><a href="">Books</a></li>
-                            <li><a href="">Gadgets</a></li>
+                            <li><a href="/listUsersExample?type=TVSHOW">TV</a></li>
+                            <li><a href="/listUsersExample?type=MOVIE">Movies</a></li>
+                            <li><a href="/listUsersExample?type=MUSIC">Music</a></li>
+                            <li><a href="/listUsersExample?type=GAME">Games</a></li>
+                            <li><a href="/listUsersExample?type=BOOK">Books</a></li>
+                            <li><a href="/listUsersExample?type=GADGET">Gadgets</a></li>
                             <li><a href="/listUsersExample">Examples</a></li>
                         </ul>
                         <form action="" style="float:right;">
