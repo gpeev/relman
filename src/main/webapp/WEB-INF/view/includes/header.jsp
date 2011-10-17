@@ -31,17 +31,14 @@
     </div>
 </div>
 
-<div style="background-color: rgba(0,0,0,0.5); border: none; padding: 40px 40px 40px 0px; display:none; float:left; z-index: 7000; position:fixed; height:100%; width: 100%;"
-     id="login">
+<div style="background: #000; border: none; padding: 40px 40px 40px 0px; display:none; float:left; z-index: 7000; position:fixed; height:100%; width: 100%;" id="login">
     <div class="modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 6000;">
         <div class="modal-header">
             <h3>Login</h3>
             <a href="#" class="close" onclick="hidePopup('login');">&times;</a>
         </div>
         <div class="modal-body">
-
             <%@ include file="/WEB-INF/view/login.jsp" %>
-
         </div>
     </div>
 </div>

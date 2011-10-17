@@ -9,6 +9,7 @@
         <th>#</th>
         <th>Title</th>
         <th>Type</th>
+        <th>Images</th>
     </tr>
     </thead>
     <tbody>
@@ -26,6 +27,17 @@
         </td>
         <td><%=release.getType()%>
         </td>
+        <td>
+            <%
+                List<String> blobKeys = release.getImgKeys();
+                for (int j = 0; blobKeys != null && j < blobKeys.size(); j++)
+                {
+                    String key = blobKeys.get(j);
+                    out.print("<img width='25px' src='/imgBlob/" + key + "'>");
+                }
+            %>
+        </td>
+
     </tr>
     <%
         }

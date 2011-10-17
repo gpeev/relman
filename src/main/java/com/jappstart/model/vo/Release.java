@@ -6,6 +6,7 @@ import org.springframework.stereotype.*;
 import javax.persistence.Entity;
 import javax.persistence.*;
 import java.io.*;
+import java.util.*;
 
 @SuppressWarnings("serial")
 @Repository
@@ -20,6 +21,7 @@ public class Release implements Serializable
 
     private String title;
     private String type;
+    private List<String> imgKeys;
 
 
     /**
@@ -69,6 +71,15 @@ public class Release implements Serializable
         this.type = type;
     }
 
+    public List<String> getImgKeys()
+    {
+        return imgKeys;
+    }
+
+    public void setImgKeys(List<String> imgKeys)
+    {
+        this.imgKeys = imgKeys;
+    }
 
     @Override
     public String toString()

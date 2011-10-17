@@ -14,10 +14,10 @@ import java.util.*;
 
 
 @Service
-public class ReleaseServiceImpl implements ReleaseService{
+public class ReleaseServiceImpl implements ReleaseService
+{
 
     //todo: move all of this common stuff into a CommonService that is inheritied.
-
 
 
     private static final int DEFAULT_EXPIRATION = 3600;
@@ -34,7 +34,6 @@ public class ReleaseServiceImpl implements ReleaseService{
      * The memcache service.
      */
     private MemcacheService memcacheService;
-
 
 
     /**
@@ -82,66 +81,73 @@ public class ReleaseServiceImpl implements ReleaseService{
 
 
     @Transactional
-    public final void addRelease(final Add a, final Locale locale)
+    public final void addRelease(final Add addForm, final Locale locale)
     {
-    	Release r;
+        Release r;
         System.out.println("In ReleaseService");
-        if(a==null) System.out.println("Add is NULL");
-        if(memcacheService==null) System.out.println("memcache is null");
-        System.out.println("Title:"+a.getTitle());
-        System.out.println("Type:"+a.getType());
-        if(memcacheService != null){
-        	r = (Release) memcacheService.get(new Release(a.getTitle(),a.getType()).getKey());
+        if (addForm == null) System.out.println("Add is NULL");
+        if (memcacheService == null) System.out.println("memcache is null");
+        System.out.println("Title:" + addForm.getTitle());
+        System.out.println("Type:" + addForm.getType());
+
+        if (memcacheService != null)
+        {
+            r = (Release) memcacheService.get(new Release(addForm.getTitle(), addForm.getType()).getKey());
             //check the cache
             if (r != null)
             {
                 throw new RuntimeException("Found Duplicate Release in cache");
             }
-            
-            Release temp = new Release(a.getTitle(), a.getType());
-        	
-        	final Query query = entityManager.createQuery("SELECT u FROM Release u WHERE key = :key");
+
+            Release temp = new Release(addForm.getTitle(), addForm.getType());
+
+            final Query query = entityManager.createQuery("SELECT u FROM Release u WHERE key = :key");
             query.setParameter("key", temp.getKey());
-            
+
             final List<?> results = query.getResultList();
             if (results != null && !results.isEmpty())
             {
                 throw new RuntimeException("Found Duplicate Release in datastore");
             }
-        } 
+        }
 
         //todo: maybe extend Release with Add so we don't have to dup all that
         //todo: or it my be better to be specific - Movie, Book, etc.
-        r = new Release(a.getTitle(), a.getType());
-        if(r != null){
-        	System.out.println("Release is not null " + r.getTitle());
-        	entityManager.persist(r);
+        r = new Release(addForm.getTitle(), addForm.getType());
+        if (r != null)
+        {
+            r.setImgKeys(addForm.getImageKeys());
+            System.out.println("Release is not null " + r.getTitle());
+            entityManager.persist(r);
         }
-   
+
         memcacheService.put(r.getKey(), r, Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
-        System.out.println(r+" has been persisted.");
+        System.out.println(r + " has been persisted.");
     }
 
 
     @SuppressWarnings("unchecked")
-	@Transactional
+    @Transactional
     public List<Release> loadReleases(RelType type)
     {
         List<Release> r = null;
         Query query;
-        if (type != null){
-        	query = entityManager.createQuery("SELECT u FROM Release u where u.type='" + type.name() +"'");
-        } else {
-        	query = entityManager.createQuery("SELECT u FROM Release u");
+        if (type != null)
+        {
+            query = entityManager.createQuery("SELECT u FROM Release u where u.type='" + type.name() + "'");
         }
-        
+        else
+        {
+            query = entityManager.createQuery("SELECT u FROM Release u");
+        }
+
         try
         {
             r = query.getResultList();
             for (int i = 0; i < r.size(); i++)
             {
                 Release release = r.get(i);
-                System.out.println(i+") "+release);
+                System.out.println(i + ") " + release);
             }
         }
         catch (NoResultException e)
@@ -150,5 +156,5 @@ public class ReleaseServiceImpl implements ReleaseService{
         }
         return r;
     }
-    
+
 } 

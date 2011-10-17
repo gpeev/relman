@@ -55,3 +55,18 @@ function sendJson(values, url, func) {
         success: func
     });
 }
+
+
+function sendJsonNoParams(url, func) {
+  //  var values = {};
+         //     alert("post:"+url);
+    $.ajax({
+        async:false,
+        url: url,
+        contentType: 'application/json',
+        dataType: 'json',
+//        data: JSON.stringify(values),
+        type: 'post',
+        success: func
+    });
+}

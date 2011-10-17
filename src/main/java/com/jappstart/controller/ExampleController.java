@@ -183,15 +183,6 @@ public class ExampleController
         
         req.setAttribute("releaseList",rs);
 
-        /*
-        for (int i = 0; i < rs.size(); i++)
-        {
-            Release r = rs.get(i);
-            System.out.println(i+") "+r);
-            req.setAttribute(i+"+"+r.getTitle(), r.toString());
-        }
-        */
-
         return "forward:listExample";
     }
 

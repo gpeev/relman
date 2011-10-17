@@ -24,6 +24,10 @@
     <bean id="memcacheServiceUser" class="com.google.appengine.api.memcache.MemcacheServiceFactory"
         factory-method="getMemcacheService">
         <constructor-arg value="UserCache"/>
-    </bean> 
+    </bean>
+
+    <bean id="blobstoreService" class="com.google.appengine.api.blobstore.BlobstoreServiceFactory"
+          factory-method="getBlobstoreService" />
+
 
 </beans>
