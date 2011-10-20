@@ -18,7 +18,7 @@
         <intercept-url pattern="/error/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http" />
         <intercept-url pattern="/register/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http" />
 		<intercept-url pattern="/add/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http" />
-
+		<intercept-url pattern="/viewDetails/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http" />
 
         <intercept-url pattern="/*Example" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http" />
 

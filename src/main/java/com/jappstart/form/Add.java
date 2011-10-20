@@ -1,7 +1,14 @@
 package com.jappstart.form;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.commons.*;
 
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
+
+import javax.jdo.annotations.PersistenceCapable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.validation.constraints.*;
 import java.io.*;
 
@@ -12,7 +19,7 @@ import java.io.*;
 public class Add implements Serializable
 {
 
-    /**
+	/**
      * Epic Release
      */
     //display title
@@ -27,9 +34,7 @@ public class Add implements Serializable
 
     @Pattern(regexp = ".+")
     private String type;
-    @Pattern(regexp = ".+")
     private String purchaseLink1;
-    @Pattern(regexp = ".+")
     private String purchaseLink2;
 
 
@@ -51,18 +56,14 @@ public class Add implements Serializable
     @Pattern(regexp = ".+")
     private String cast;        //TV Show, Movies
     @Pattern(regexp = ".+")
-    private String genre;         //TV Show, Movies, Video Games
-    @Pattern(regexp = ".+")
+    private String genre;         //TV Show, Movies, Video Games 
     private String imdbId;        //TV Show, Movies
-    @Pattern(regexp = ".+")
     private String netflixId;    //TV Show, Movies
 
     /**
      * TV Show data
      */
-    @Pattern(regexp = ".+")
     private String tvDbId;
-    @Pattern(regexp = ".+")
     private String zapTvId;
     @Pattern(regexp = ".+")
     private String network;

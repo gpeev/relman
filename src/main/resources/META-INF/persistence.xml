@@ -28,6 +28,7 @@
             <property name="datanucleus.NontransactionalRead" value="true" />
             <property name="datanucleus.NontransactionalWrite" value="true" />
             <property name="datanucleus.ConnectionURL" value="appengine" />
+            <property name="datanucleus.appengine.storageVersion" value="WRITE_OWNED_CHILD_KEYS_TO_PARENTS"/>
         </properties>
     </persistence-unit>
 

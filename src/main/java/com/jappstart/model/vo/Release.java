@@ -1,6 +1,7 @@
 package com.jappstart.model.vo;
 
 import com.google.appengine.api.datastore.*;
+
 import org.springframework.stereotype.*;
 
 import javax.persistence.Entity;
@@ -20,8 +21,12 @@ public class Release implements Serializable
 
     private String title;
     private String type;
-
-
+    private String date;
+    
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private TVInfo releaseInfo;
+    
+    
     /**
      * Returns the key.
      *
@@ -42,11 +47,13 @@ public class Release implements Serializable
         this.key = key;
     }
 
-    public Release(final String title, final String type)
+    public Release(final String title, final String type, final String date, final TVInfo releaseInfo)
     {
         this.key = KeyFactory.createKey(getClass().getSimpleName(), title + type);
         this.title = title;
         this.type = type;
+        this.date = date;
+        this.releaseInfo = releaseInfo;
     }
 
     public String getTitle()
@@ -70,13 +77,30 @@ public class Release implements Serializable
     }
 
 
-    @Override
+    public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public TVInfo getReleaseInfo() {
+		return releaseInfo;
+	}
+
+	public void setReleaseInfo(TVInfo releaseInfo) {
+		this.releaseInfo = releaseInfo;
+	}
+
+	@Override
     public String toString()
     {
         return "Release{" +
                 "key=" + key +
                 ", title='" + title + '\'' +
                 ", type='" + type + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 }

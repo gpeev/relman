@@ -26,7 +26,7 @@
     <mvc:view-controller path="/helloWorld" view-name="index" />
 	<mvc:view-controller path="/add" view-name="add" />
     <mvc:view-controller path="/register/success" view-name="createSuccess" />
-
+	<mvc:view-controller path="/viewDetails" view-name="viewDetails" />
 
 
 

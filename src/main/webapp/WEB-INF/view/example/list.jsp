@@ -24,12 +24,11 @@
         </td>
         <td><%=release.getTitle()%>
         </td>
-        <td><%=release.getType()%>
+        <td><%=release.getDate()%>
         </td>
     </tr>
     <%
         }
-
     %>
 
     </tbody>
