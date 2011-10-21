@@ -1,5 +1,6 @@
 package com.jappstart.controller;
 
+import com.google.appengine.api.blobstore.*;
 import com.jappstart.form.*;
 import com.jappstart.model.vo.*;
 import com.jappstart.service.*;
@@ -111,6 +112,8 @@ public class AddController
         return "add";
     }
 
+    private BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+
 
     /**
      * Handle the create account form submission.
@@ -129,10 +132,11 @@ public class AddController
 
         if (binding.hasErrors())
         {
-        	System.out.println("Binding Error: " + binding.getErrorCount());
+            System.out.println("Binding Error: " + binding.getErrorCount());
             System.out.println("Inside the Binding Errors block = " + binding.getAllErrors().toString());
             return "add";
         }
+
 
         System.out.println("AddControler about to add release");
 
@@ -141,7 +145,23 @@ public class AddController
             //TODO Implement saving of the release
 
 
-            
+            System.out.println("Blobs -------------------------------------------- Start");
+            Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(request);
+
+            Iterator bit = blobs.keySet().iterator();
+            List<String> imgKeys = new ArrayList<String>();
+            while (bit.hasNext())
+            {
+                String key = (String) bit.next();
+                BlobKey blob = blobs.get(key);
+                System.out.println(key + " : " + blob.getKeyString());
+                imgKeys.add(blob.getKeyString());
+            }
+            System.out.println("Blobs -------------------------------------------- End");
+
+
+            add.setImageKeys(imgKeys);
+
             releaseService.addRelease(add, locale);
         }
         catch (Exception e)

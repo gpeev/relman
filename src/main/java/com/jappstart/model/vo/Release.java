@@ -1,12 +1,12 @@
 package com.jappstart.model.vo;
 
 import com.google.appengine.api.datastore.*;
-
 import org.springframework.stereotype.*;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
 import java.io.*;
+import java.util.*;
 
 @SuppressWarnings("serial")
 @Repository
@@ -26,7 +26,9 @@ public class Release implements Serializable
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private TVInfo releaseInfo;
     
-    
+
+    private List<String> imgKeys;
+
     /**
      * Returns the key.
      *
@@ -76,6 +78,15 @@ public class Release implements Serializable
         this.type = type;
     }
 
+    public List<String> getImgKeys()
+    {
+        return imgKeys;
+    }
+
+    public void setImgKeys(List<String> imgKeys)
+    {
+        this.imgKeys = imgKeys;
+    }
 
     public String getDate() {
 		return date;

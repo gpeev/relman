@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
 import java.io.*;
+import java.util.*;
 
 /**
  * The add form bean.
@@ -30,7 +31,12 @@ public class Add implements Serializable
     @Pattern(regexp = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/((19|20)\\d{2})", message = "Invalid date format, must be in the following format: MM/DD/YYYY.")
     private String releaseDate;
 
-  //  private CommonsMultipartFile image;
+
+
+    private CommonsMultipartFile image;
+
+    private List<String> imageKeys;
+
 
     @Pattern(regexp = ".+")
     private String type;
@@ -161,18 +167,18 @@ public class Add implements Serializable
 
     /* CHECKSTYLE:OFF */
 
-  //  public void setImage(final CommonsMultipartFile image)
-   // {
-   //     this.image = image;
-   // }
+    public void setImage(final CommonsMultipartFile image)
+    {
+        this.image = image;
+    }
     /* CHECKSTYLE:ON */
 
     /* CHECKSTYLE:OFF */
 
-  //  public CommonsMultipartFile getImage()
-  //  {
-  //      return image;
-  //  }
+    public CommonsMultipartFile getImage()
+    {
+        return image;
+    }
     /* CHECKSTYLE:ON */
 
     /* CHECKSTYLE:OFF */
@@ -591,4 +597,14 @@ public class Add implements Serializable
     }
     /* CHECKSTYLE:ON */
 
+
+    public List<String> getImageKeys()
+    {
+        return imageKeys;
+    }
+
+    public void setImageKeys(List<String> imageKeys)
+    {
+        this.imageKeys = imageKeys;
+    }
 }

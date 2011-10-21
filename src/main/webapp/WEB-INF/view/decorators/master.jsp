@@ -11,6 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><decorator:title /></title>
     <decorator:head />
+    <%@ include file="/WEB-INF/view/includes/script.jsp" %>
+
     <%@ include file="/WEB-INF/view/includes/style.jsp" %>
     <meta charset="utf-8">
 
@@ -31,12 +33,9 @@
 
   </head>
 
-    <body>
+    <body id="bootstrap-js">
         <div id="header">
             <%@ include file="/WEB-INF/view/includes/header.jsp" %>
-        </div>
-        <div id="javascript" >
-            <%@ include file="/WEB-INF/view/includes/script.jsp" %>
         </div>
         <div id="content">
         	<div class="container">

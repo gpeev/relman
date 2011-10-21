@@ -4,7 +4,6 @@ import com.google.appengine.api.datastore.*;
 import com.google.appengine.api.memcache.*;
 import com.jappstart.form.*;
 import com.jappstart.model.vo.*;
-import com.jappstart.model.vo.Rating;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -16,10 +15,10 @@ import java.util.*;
 
 
 @Service
-public class ReleaseServiceImpl implements ReleaseService{
+public class ReleaseServiceImpl implements ReleaseService
+{
 
     //todo: move all of this common stuff into a CommonService that is inheritied.
-
 
 
     private static final int DEFAULT_EXPIRATION = 3600;
@@ -36,7 +35,6 @@ public class ReleaseServiceImpl implements ReleaseService{
      * The memcache service.
      */
     private MemcacheService memcacheService;
-
 
 
     /**
@@ -84,68 +82,56 @@ public class ReleaseServiceImpl implements ReleaseService{
 
 
     @Transactional
-    public final void addRelease(final Add a, final Locale locale)
+    public final void addRelease(final Add addForm, final Locale locale)
     {
     	Release r;
-    	TVInfo rInfo = populateTVInfo(a);
+    	TVInfo rInfo = populateTVInfo(addForm);
 
-        System.out.println("In ReleaseService");
-        if(a==null) System.out.println("Add is NULL");
+        if(addForm==null) System.out.println("Add is NULL");
         if(memcacheService==null) System.out.println("memcache is null");
-        System.out.println("Title:"+a.getTitle());
-        System.out.println("Type:"+a.getType());
+        System.out.println("Title:"+addForm.getTitle());
+        System.out.println("Type:"+addForm.getType());
         if(memcacheService != null){
-        	r = (Release) memcacheService.get(new Release(a.getTitle(), a.getType(), a.getReleaseDate(), rInfo).getKey());
+        	r = (Release) memcacheService.get(new Release(addForm.getTitle(), addForm.getType(), addForm.getReleaseDate(), rInfo).getKey());
         	
             //check the cache
             if (r != null)
             {
                 throw new RuntimeException("Found Duplicate Release in cache");
             }
-            
-            
-            
-            Release temp = new Release(a.getTitle(), a.getType(), a.getReleaseDate(), rInfo);
-            
-        	if(temp.getReleaseInfo() != null){
-        		System.out.println("temp != null && release = " + temp.getReleaseInfo());
-        		System.out.println("Try to Cast:" + temp.getReleaseInfo());
-        		System.out.println("Try to getDescription:" + temp.getReleaseInfo().getDescription());
-        	}
-        	
+                 
+            Release temp = new Release(addForm.getTitle(), addForm.getType(), addForm.getReleaseDate(), rInfo);
+
         	final Query query = entityManager.createQuery("SELECT u FROM Release u WHERE key = :key");
+
             query.setParameter("key", temp.getKey());
-            
+
             final List<?> results = query.getResultList();
             if (results != null && !results.isEmpty())
             {
                 throw new RuntimeException("Found Duplicate Release in datastore");
             }
-        } 
+        }
 
-        //todo: maybe extend Release with Add so we don't have to dup all that
-        //todo: or it my be better to be specific - Movie, Book, etc.
-        r = new Release(a.getTitle(), a.getType(), a.getReleaseDate(), rInfo);
+        r = new Release(addForm.getTitle(), addForm.getType(), addForm.getReleaseDate(), rInfo);
         
-       	if(r.getReleaseInfo() != null){
-    		System.out.println("temp != null && release = " + r.getReleaseInfo());
-    		System.out.println("Try to Cast:" + r.getReleaseInfo());
-    		System.out.println("Try to Description:" +r.getReleaseInfo().getDescription());
-    	}
+
     	
         
         if(r != null){
-        	System.out.println("Release is not null " + r.getTitle());
-        	entityManager.persist(r);
+            r.setImgKeys(addForm.getImageKeys());
+            System.out.println("Release is not null " + r.getTitle());
+            entityManager.persist(r);
+
         }
-   
+
         memcacheService.put(r.getKey(), r, Expiration.byDeltaSeconds(DEFAULT_EXPIRATION));
-        System.out.println(r+" has been persisted.");
+        System.out.println(r + " has been persisted.");
     }
 
 
     @SuppressWarnings("unchecked")
-	@Transactional
+    @Transactional
     public List<Release> loadReleases(RelType type)
     {
         List<Release> r = null;
@@ -155,7 +141,7 @@ public class ReleaseServiceImpl implements ReleaseService{
         } else {
         	query = entityManager.createQuery("SELECT FROM Release u");
         }
-        
+
         try
         {
             r = query.getResultList();
@@ -167,6 +153,7 @@ public class ReleaseServiceImpl implements ReleaseService{
                 	TVInfo temp = release.getReleaseInfo();
                 	System.out.println("Description from release = " + temp.getDescription());;
                 }
+                System.out.println(i + ") " + release);
             }
         }
         catch (NoResultException e)
@@ -212,5 +199,5 @@ public class ReleaseServiceImpl implements ReleaseService{
         }
         return release;
 	}
-    
+
 } 

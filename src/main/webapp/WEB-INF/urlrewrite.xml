@@ -3,6 +3,10 @@
 <!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.1//EN" "http://www.tuckey.org/res/dtds/urlrewrite3.1.dtd">
 <urlrewrite>
     <rule>
+        <from>^/post$</from>
+        <to last="true">/post</to>
+    </rule>
+    <rule>
         <from>^/appstats(.*)$</from>
         <to last="true">/appstats$1</to>
     </rule>
