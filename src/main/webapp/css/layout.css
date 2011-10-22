@@ -7,3 +7,18 @@
 span.error {
     background-color: #FFBABA;
 }
+
+span.text {
+	font-weight:normal;
+	line-height:24px;
+}
+
+.lineHeight24 {
+	line-height:24px;
+}
+
+.detailText {
+	float:left;
+	width: 100px;
+	line-height:24px;
+}

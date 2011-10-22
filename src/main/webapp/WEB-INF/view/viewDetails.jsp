@@ -36,11 +36,11 @@
 				<img src="/img/underworld.jpg" style="display: block; z-index: 5;" height="240" width="160">
 			</div>
 			<div class="span9">
-				<h5>Cast:        <%=info.getCast()%></h5>
-				<h5>Genre:       <%=info.getGenre()%></h5>
-				<h5>Rating:      <%=info.getRating()%></h5>
-				<h5>Network:     <%=info.getNetwork()%></h5>
-				<h5 style="line-height:24px;">Description: <span style="font-weight:normal"><%=info.getDescription()%> + a bunch of other garbage that needs to be removed.  Just wanted to show you what the carry over on long paragraphs looks like.  :D.   I hope that does not get converted into a smiley.</span></h5>
+				<h5><span class="detailText">Cast:</span>       <span class="text"><%=info.getCast()%></span></h5>
+				<h5><span class="detailText">Genre:  </span>     <span class="text"><%=info.getGenre()%></span></h5>
+				<h5><span class="detailText">Rating:</span>     <span class="text"> <%=info.getRating()%></span></h5>
+				<h5><span class="detailText">Network: </span>  <span class="text">  <%=info.getNetwork()%></span></h5>
+				<h5 class="lineHeight24"><span class="detailText">Description:</span> <span class="text"><%=info.getDescription()%> + a bunch of other garbage that needs to be removed.  Just wanted to show you what the carry over on long paragraphs looks like.  :D.   I hope that does not get converted into a smiley.</span></h5>
 
 			</div>
 			<div class="span3">
