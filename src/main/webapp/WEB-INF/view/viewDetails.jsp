@@ -66,26 +66,27 @@
 				    </tr>
 				    </thead>
 				    <tbody>
+				    <%
+				        List<TVEp> p = info.getEpisodes();
+				        for (int i = 0; i < p.size(); i++)
+				        {
+				            TVEp ep = p.get(i);
+				    %>
+				
 				    <tr>
-				        <td>1
+				        <td><%=i + 1%>
 				        </td>
-				        <td>Lion-O vs Mumra
+				        <td><%=ep.getEpisodeTitle()%>
 				        </td>
-				        <td>09/12/2011
+				        <td><%=ep.getAir_date()%>
 				        </td>
-				        <td>Lion-O comes face to face against Mumra
-				        </td>
-				     </tr>
-				     <tr>
-				        <td>2
-				        </td>
-				        <td>Lion-O vs Dad
-				        </td>
-				        <td>09/25/2011
-				        </td>
-				        <td>Lion-O must explain to his dad why he sucks at leading.
+				        <td><%=ep.getDescription()%>
 				        </td>
 				    </tr>
+				    <%
+				        }
+				    %>
+				
 				    </tbody>
 				</table>
 			</div>

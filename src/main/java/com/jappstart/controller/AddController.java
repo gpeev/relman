@@ -144,7 +144,7 @@ public class AddController
         {
             //TODO Implement saving of the release
 
-
+        	/**
             System.out.println("Blobs -------------------------------------------- Start");
             Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(request);
 
@@ -161,7 +161,7 @@ public class AddController
 
 
             add.setImageKeys(imgKeys);
-
+			**/
             releaseService.addRelease(add, locale);
         }
         catch (Exception e)

@@ -2,11 +2,11 @@ package com.jappstart.model.vo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 
 
 import com.google.appengine.api.datastore.*;
@@ -43,19 +43,30 @@ public class TVInfo implements Serializable{
     {
         this.key = key;
     }
-	int epicReleaseId;
-	String tvDbId;			//theTVDb.com unique ID
-	String cast;
-	String rating;
-	String network;			//TV network i.e. FOX, CBS, ABC, etc.
-	String description;
-	String genre;			//Comma separated i.e. Drama, Comedy
-	String zapTvId;
-	String imdbId;
-	String netflixId;
-	Date add_date;    		//Date added
-	Date update_date; 		//Update only on info updates
+	private int epicReleaseId;
+	private String tvDbId;			//theTVDb.com unique ID
+	private String cast;
+	private String rating;
+	private String network;			//TV network i.e. FOX, CBS, ABC, etc.
+	private String description;
+	private String genre;			//Comma separated i.e. Drama, Comedy
+	private String zapTvId;
+	private String imdbId;
+	private String netflixId;
+	private Date add_date;    		//Date added
+	private Date update_date; 		//Update only on info updates
 	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List <TVEp> episodes;
+	
+	public List<TVEp> getEpisodes() {
+		return episodes;
+	}
+
+	public void setEpisodes(List<TVEp> episodes) {
+		this.episodes = episodes;
+	}
+
 	public int getEpicReleaseId() {
 		return epicReleaseId;
 	}

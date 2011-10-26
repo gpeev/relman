@@ -15,5 +15,5 @@ public interface ReleaseService {
 	    
 	    List<Release> loadReleases(RelType type);
 	    
-	    Release viewReleaseDetails(String key);
+	    Release viewReleaseDetails(Key key);
 }

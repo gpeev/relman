@@ -11,6 +11,8 @@ span.error {
 span.text {
 	font-weight:normal;
 	line-height:24px;
+	float: left;
+	width: 80%;
 }
 
 .lineHeight24 {
@@ -19,6 +21,6 @@ span.text {
 
 .detailText {
 	float:left;
-	width: 100px;
+	width: 20%;
 	line-height:24px;
 }

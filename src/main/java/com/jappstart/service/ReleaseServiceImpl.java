@@ -86,7 +86,21 @@ public class ReleaseServiceImpl implements ReleaseService
     {
     	Release r;
     	TVInfo rInfo = populateTVInfo(addForm);
-
+    	TVEp ep = new TVEp();
+    	ep.setEpisodeTitle("Some Episode Title");
+    	ep.setDescription("Some shit went down.");
+    	ep.setAir_date(new Date());
+    	TVEp ep2 = new TVEp();
+    	ep2.setEpisodeTitle("Some other title 2");
+    	ep2.setDescription("Some more shit went down.");
+    	ep2.setAir_date(new Date());
+    	
+    	List <TVEp> eps = new ArrayList<TVEp>();
+    	rInfo.setEpisodes(eps);
+    	
+    	rInfo.getEpisodes().add(ep);
+    	rInfo.getEpisodes().add(ep2);
+    	
         if(addForm==null) System.out.println("Add is NULL");
         if(memcacheService==null) System.out.println("memcache is null");
         System.out.println("Title:"+addForm.getTitle());
@@ -119,7 +133,7 @@ public class ReleaseServiceImpl implements ReleaseService
     	
         
         if(r != null){
-            r.setImgKeys(addForm.getImageKeys());
+            //r.setImgKeys(addForm.getImageKeys());
             System.out.println("Release is not null " + r.getTitle());
             entityManager.persist(r);
 
@@ -137,7 +151,7 @@ public class ReleaseServiceImpl implements ReleaseService
         List<Release> r = null;
         Query query;
         if (type != null){
-        	query = entityManager.createQuery("SELECT FROM Release u JOIN u.releaseInfo where u.type='" + type.name() +"'");
+        	query = entityManager.createQuery("SELECT FROM Release u JOIN u.releaseInfo ri where u.type='" + type.name() +"'");
         } else {
         	query = entityManager.createQuery("SELECT FROM Release u");
         }
@@ -145,13 +159,17 @@ public class ReleaseServiceImpl implements ReleaseService
         try
         {
             r = query.getResultList();
+            
             for (int i = 0; i < r.size(); i++)
             {
                 Release release = r.get(i);
                 System.out.println(i+") "+release);
                 if(release.getReleaseInfo() != null){
                 	TVInfo temp = release.getReleaseInfo();
-                	System.out.println("Description from release = " + temp.getDescription());;
+                	System.out.println("Description from release = " + temp.getDescription());
+                	if(temp.getEpisodes() != null && temp.getEpisodes().size() > 0){
+                		System.out.println("Episode = " + temp.getEpisodes().get(0).getEpisodeTitle());
+                	}
                 }
                 System.out.println(i + ") " + release);
             }
@@ -184,14 +202,19 @@ public class ReleaseServiceImpl implements ReleaseService
 
     @SuppressWarnings("unchecked")
 	@Transactional
-	public Release viewReleaseDetails(String key) {
-        Release release = null;
+	public Release viewReleaseDetails(Key key) {
+        Release release;
        
-        Query query = entityManager.createQuery("SELECT FROM Release u JOIN u.releaseInfo where u.key=" + key);
+        Query query = entityManager.createQuery("SELECT FROM Release u JOIN u.releaseInfo where u.key ='Shit HappenedTVSHOW'");
         
         try
         {
-            release = (Release)query.getSingleResult();            
+            release = (Release)query.getSingleResult();   
+            
+            System.out.println("Release : " + release.getTitle());
+            System.out.println("Release : " + ((TVInfo)release.getReleaseInfo()).getEpisodes().get(0).getEpisodeTitle());
+            System.out.println("Release Key : " + release.getKey());
+            System.out.println("Tv Show Key: " + release.getReleaseInfo().getKey());
         }
         catch (NoResultException e)
         {

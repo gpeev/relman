@@ -1,20 +1,58 @@
 package com.jappstart.model.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TVEp {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-	int epicReleaseId;  
-	int season;
-	int episode;	
-	String episodeTitle;
-	Date air_date;
-	String tvDbId;			//theTVDb.com unique ID
-	String description;
-	Date add_date;    		//Date added
-	Date update_date; 		//Update only on info updates
-	String director;
-	String writer;
+import org.springframework.stereotype.Repository;
+
+import com.google.appengine.api.datastore.Key;
+
+@SuppressWarnings("serial")
+@Repository
+@Entity
+public class TVEp implements Serializable{
+    /**
+     * The key.
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Key key;
+    
+    /**
+     * Returns the key.
+     *
+     * @return the key
+     */
+    public final Key getKey()
+    {
+        return key;
+    }
+
+    /**
+     * Sets the key.
+     *
+     * @param key the key
+     */
+    public final void setKey(final Key key)
+    {
+        this.key = key;
+    }
+	private int epicReleaseId;  
+	private int season;
+	private int episode;	
+	private String episodeTitle;
+	private Date air_date;
+	private String tvDbId;			//theTVDb.com unique ID
+	private String description;
+	private Date add_date;    		//Date added
+	private Date update_date; 		//Update only on info updates
+	private String director;
+	private String writer;
 	
 	public int getEpicReleaseId() {
 		return epicReleaseId;
