@@ -10,13 +10,6 @@
 
     <http auto-config="false" access-decision-manager-ref="accessDecisionManager" use-expressions="true">
 
-        <intercept-url pattern="/_ah/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
-        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
-        <intercept-url pattern="/appstats/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
-        <intercept-url pattern="/remote_api" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
-        <intercept-url pattern="/task/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
-        <intercept-url pattern="/login/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
-        <intercept-url pattern="/error/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
         <intercept-url pattern="/register/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
         <intercept-url pattern="/add/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
         <intercept-url pattern="/imgBlob/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
@@ -24,13 +17,21 @@
         <intercept-url pattern="/addImg/path/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
         <intercept-url pattern="/post/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
 		<intercept-url pattern="/viewDetails/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http" />
-
-
         <intercept-url pattern="/*Example" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
+        <!--intercept-url pattern="/json/blobKey" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/-->
 
-
+        <!-- default paths - do not modify: START -->
+        <intercept-url pattern="/_ah/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
+        <intercept-url pattern="/appstats/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
+        <intercept-url pattern="/remote_api" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
+        <intercept-url pattern="/task/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
+        <intercept-url pattern="/login/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
+        <intercept-url pattern="/error/**" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
         <intercept-url pattern="/" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
         <intercept-url pattern="/**" access="hasRole('ROLE_USER')" requires-channel="http"/>
+        <!-- default paths - do not modify: END -->
+
         <form-login login-page="/login" login-processing-url="/login/submit" authentication-failure-url="/login/error"/>
         <logout logout-url="/logout"/>
         <remember-me services-ref="rememberMeServices" key="${google.app.id}"/>

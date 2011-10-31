@@ -44,7 +44,7 @@
 
     <servlet-mapping>
         <servlet-name>post</servlet-name>
-        <url-pattern>/post/*</url-pattern>
+        <url-pattern>/post</url-pattern>       
     </servlet-mapping>
 
     <servlet-mapping>
@@ -123,7 +123,7 @@
         <filter-name>appstats</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
+         
     <filter-mapping>
         <filter-name>urlRewriteFilter</filter-name>
         <url-pattern>/*</url-pattern>

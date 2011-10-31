@@ -3,7 +3,7 @@
 <decorators defaultdir="/WEB-INF/view">
 
     <excludes>
-        <pattern>*/imgBlob/*</pattern>
+        
     </excludes>
 
     <decorator name="master" page="decorators/master.jsp">

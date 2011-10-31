@@ -271,6 +271,7 @@
                     function(result)
                     {
                         var bStore = result.destAction;
+                        //bStore = "/post";
                         $('#addForm').attr('action', bStore);
 
                     });
@@ -292,6 +293,8 @@
                 type: 'post',
                 success: function(data, textStatus, jqXHR)
                 {
+                    
+                    //alert("test:"+data);
                     var j = "/imgBlob/" + data.blobKey;
                     var o = $("#images").html();
 
@@ -300,10 +303,15 @@
                             "' width='35px'/>" +
                             "<input type='hidden' id='imgBlob-" +
                             data.blobKey + "' value='" + data.blobKey + "'/>";
+
                     if (o == "none")
+                    {
                         $("#images").html(n);
+                    }
                     else
+                    {
                         $("#images").html(o + n);
+                    }
 
                 },
                 complete: function(data, textStatus, jqXHR)

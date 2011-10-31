@@ -31,8 +31,10 @@ public class ImageController
     public final void getImg(@PathVariable String key, HttpServletResponse res)
     {
         BlobKey blobKey = new BlobKey(key);
+
         try
         {
+            res.reset();
             blobstoreService.serve(blobKey, res);
         }
         catch (IOException e)
